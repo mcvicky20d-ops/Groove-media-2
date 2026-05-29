@@ -52,6 +52,14 @@ tiles.forEach((t) => still({ w: 1200, h: 800, ...t }));
 // Approach section image (4:3, warm on-set tone)
 still({ w: 1400, h: 1050, a: "#211a10", b: "#080604", glow: "#c9a227", gx: 60, gy: 30, file: "../approach.svg" });
 
+// Contact page banner (cool studio tone)
+still({ w: 1920, h: 1080, a: "#10161c", b: "#050708", glow: "#3a7bbf", gx: 65, gy: 25, file: "../contact.svg" });
+
+// Wedding gallery (warm tones)
+still({ w: 900, h: 1200, a: "#2a1d10", b: "#0d0805", glow: "#e0b872", gx: 50, gy: 30, file: "../wedding-1.svg" });
+still({ w: 900, h: 1200, a: "#241910", b: "#0b0705", glow: "#d8a86a", gx: 40, gy: 40, file: "../wedding-2.svg" });
+still({ w: 900, h: 1200, a: "#2b1e14", b: "#0e0806", glow: "#e8c486", gx: 60, gy: 35, file: "../wedding-3.svg" });
+
 // Weddings — warm
 still({ w: 1600, h: 900, a: "#2a1d10", b: "#0d0805", glow: "#e0b872", gx: 30, gy: 35, file: "../wedding.svg" });
 

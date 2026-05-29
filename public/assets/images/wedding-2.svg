@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1200" viewBox="0 0 900 1200">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#241910"/>
+      <stop offset="100%" stop-color="#0b0705"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#d8a86a" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#d8a86a" stop-opacity="0"/>
+    </radialGradient>
+    
+  <radialGradient id="vig../wedding-2.svg" cx="50%" cy="42%" r="75%">
+    <stop offset="55%" stop-color="#000000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000000" stop-opacity="0.75"/>
+  </radialGradient>
+  </defs>
+  <rect width="900" height="1200" fill="url(#g)"/>
+  <rect width="900" height="1200" fill="url(#glow)"/>
+  
+  <rect width="900" height="1200" fill="url(#vig../wedding-2.svg)"/>
+</svg>

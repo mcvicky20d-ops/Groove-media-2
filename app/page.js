@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import MarqueeStrip from "@/components/MarqueeStrip";
 import WhatWeDo from "@/components/WhatWeDo";
 import Approach from "@/components/Approach";
+import FeaturedWork from "@/components/FeaturedWork";
 import ClientMarquee from "@/components/ClientMarquee";
 import Stats from "@/components/Stats";
 import Testimonials from "@/components/Testimonials";
@@ -16,6 +17,7 @@ export default function Home() {
       <MarqueeStrip />
       <WhatWeDo />
       <Approach />
+      <FeaturedWork />
       <div className="bg-ink pb-12">
         <ClientMarquee />
       </div>

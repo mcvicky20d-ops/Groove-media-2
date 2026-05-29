@@ -15,6 +15,7 @@ export default function ContactPage() {
         eyebrow="Contact"
         title="Start a *project.*"
         subtitle="Planning a campaign or a film? Tell us what you have in mind."
+        image="/assets/images/contact.svg"
       />
       <Contact />
       <Footer />

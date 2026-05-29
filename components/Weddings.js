@@ -1,8 +1,14 @@
 "use client";
 
 import AnimatedHeading from "@/components/ui/AnimatedHeading";
-import Reveal from "@/components/ui/Reveal";
+import Reveal, { RevealGroup, RevealItem } from "@/components/ui/Reveal";
 import MagneticButton from "@/components/ui/MagneticButton";
+
+const GALLERY = [
+  { img: "/assets/images/wedding-1.svg", label: "The Ceremony" },
+  { img: "/assets/images/wedding-2.svg", label: "Candid Moments" },
+  { img: "/assets/images/wedding-3.svg", label: "The Celebration" },
+];
 
 export default function Weddings() {
   return (
@@ -26,8 +32,8 @@ export default function Weddings() {
           Weddings Vertical
         </p>
         <AnimatedHeading
-          text="Cinematic wedding stories, told with care."
-          className="display-line text-4xl text-bone sm:text-5xl lg:text-6xl"
+          text="Cinematic wedding *stories*, told with care."
+          className="display-line text-bone text-[clamp(2rem,5vw,3.75rem)]"
         />
         <Reveal delay={0.1}>
           <p className="mt-8 max-w-xl text-lg text-bone/70">
@@ -41,6 +47,28 @@ export default function Weddings() {
           </div>
         </Reveal>
       </div>
+
+      {/* Wedding gallery */}
+      <RevealGroup
+        stagger={0.12}
+        className="container-x relative z-10 mt-16 grid grid-cols-1 gap-5 sm:grid-cols-3"
+      >
+        {GALLERY.map((g) => (
+          <RevealItem
+            key={g.label}
+            className="group relative aspect-[3/4] overflow-hidden rounded-2xl"
+          >
+            <div
+              className="absolute inset-0 bg-cover bg-center transition-transform duration-[1.1s] ease-cinematic group-hover:scale-110"
+              style={{ backgroundImage: `url(${g.img})` }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-transparent to-transparent" />
+            <span className="absolute bottom-5 left-5 font-display text-lg uppercase tracking-wide text-bone">
+              {g.label}
+            </span>
+          </RevealItem>
+        ))}
+      </RevealGroup>
     </section>
   );
 }

@@ -85,8 +85,9 @@ html.lenis body {
     @apply mx-auto w-full max-w-[1400px] px-6 md:px-10 lg:px-16;
   }
   .display-line {
-    @apply font-display uppercase leading-[0.95] tracking-tightest;
-    word-spacing: 0.06em;
+    @apply font-display uppercase leading-[1.02];
+    letter-spacing: 0.005em;
+    word-spacing: 0.18em;
   }
   /* Elegant lowercase serif italic used for emphasis words inside headings */
   .accent-serif {

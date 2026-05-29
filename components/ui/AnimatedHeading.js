@@ -62,12 +62,16 @@ export default function AnimatedHeading({
   return (
     <Tag ref={ref} className={className}>
       {words.map((word, i) => {
-        const isAccent = /^\*.+\*$/.test(word);
-        const clean = isAccent ? word.slice(1, -1) : word;
+        // Accept *word*, *word.*, or *word*. — punctuation may sit inside or
+        // just after the asterisks.
+        const m = word.match(/^\*(.+?)\*([^\w*]*)$/);
+        const isAccent = !!m;
+        const clean = isAccent ? m[1] : word;
+        const trail = isAccent ? m[2] : "";
         return (
           <span
             key={i}
-            className="reveal-line mr-[0.25em] inline-block align-top"
+            className="reveal-line mr-[0.4em] inline-block align-top"
           >
             <span
               className={`reveal-word inline-block ${
@@ -75,6 +79,7 @@ export default function AnimatedHeading({
               }`}
             >
               {clean}
+              {trail}
             </span>
           </span>
         );
