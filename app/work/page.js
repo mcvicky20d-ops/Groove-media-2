@@ -1,5 +1,6 @@
 import PageHero from "@/components/PageHero";
 import SelectedWork from "@/components/SelectedWork";
+import Testimonials from "@/components/Testimonials";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
@@ -14,12 +15,13 @@ export default function WorkPage() {
     <main>
       <PageHero
         eyebrow="Selected Work"
-        title="A reel of films, campaigns, and frames."
+        title="A reel of films, campaigns, and *frames.*"
         subtitle="Our work moves across fashion, retail, hospitality, and culture-driven brands."
         image="/assets/images/portfolio/work-01.svg"
       />
       <SelectedWork />
-      <CTASection title="Got a project in mind?" />
+      <Testimonials />
+      <CTASection title="Got a project in *mind?*" />
       <Footer />
     </main>
   );

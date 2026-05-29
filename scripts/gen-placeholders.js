@@ -43,8 +43,14 @@ const tiles = [
   { a: "#0f1a24", b: "#05080a", glow: "#2f6da9", num: "04", file: "work-04.svg" },
   { a: "#1a1024", b: "#07050a", glow: "#6a3ba9", num: "05", file: "work-05.svg" },
   { a: "#101f17", b: "#05090a", glow: "#2fa96d", num: "06", file: "work-06.svg" },
+  { a: "#20160c", b: "#080604", glow: "#c9a227", num: "07", file: "work-07.svg" },
+  { a: "#0c1c20", b: "#04080a", glow: "#2f9aa9", num: "08", file: "work-08.svg" },
+  { a: "#1d0f17", b: "#080406", glow: "#a93b73", num: "09", file: "work-09.svg" },
 ];
 tiles.forEach((t) => still({ w: 1200, h: 800, ...t }));
+
+// Approach section image (4:3, warm on-set tone)
+still({ w: 1400, h: 1050, a: "#211a10", b: "#080604", glow: "#c9a227", gx: 60, gy: 30, file: "../approach.svg" });
 
 // Weddings — warm
 still({ w: 1600, h: 900, a: "#2a1d10", b: "#0d0805", glow: "#e0b872", gx: 30, gy: 35, file: "../wedding.svg" });

@@ -17,6 +17,9 @@ const WORK = [
   { title: "Product Story", tag: "Commercial", span: "md:col-span-2", img: "/assets/images/portfolio/work-04.svg", video: "/assets/videos/work/work-04.mp4" },
   { title: "Digital Content", tag: "Social", span: "", img: "/assets/images/portfolio/work-05.svg", video: "" },
   { title: "Culture Film", tag: "Editorial", span: "", img: "/assets/images/portfolio/work-06.svg", video: "" },
+  { title: "Jewellery Spot", tag: "Luxury", span: "", img: "/assets/images/portfolio/work-07.svg", video: "" },
+  { title: "Music Video", tag: "Artist", span: "", img: "/assets/images/portfolio/work-08.svg", video: "" },
+  { title: "Wedding Story", tag: "Weddings", span: "", img: "/assets/images/portfolio/work-09.svg", video: "" },
 ];
 
 function WorkTile({ item }) {
@@ -75,13 +78,18 @@ function WorkTile({ item }) {
 
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/10 to-transparent" />
 
-        <div className="absolute bottom-0 left-0 p-6">
-          <span className="text-xs uppercase tracking-[0.3em] text-gold">
-            {item.tag}
+        <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-6">
+          <div>
+            <span className="text-xs uppercase tracking-[0.3em] text-gold">
+              {item.tag}
+            </span>
+            <h3 className="mt-1 font-display text-2xl uppercase text-bone">
+              {item.title}
+            </h3>
+          </div>
+          <span className="mb-1 flex h-10 w-10 shrink-0 translate-y-3 items-center justify-center rounded-full border border-bone/40 text-bone opacity-0 transition-all duration-500 ease-cinematic group-hover:translate-y-0 group-hover:border-gold group-hover:text-gold group-hover:opacity-100">
+            ↗
           </span>
-          <h3 className="mt-1 font-display text-2xl uppercase text-bone">
-            {item.title}
-          </h3>
         </div>
       </div>
       </Tilt>

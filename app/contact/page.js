@@ -13,7 +13,7 @@ export default function ContactPage() {
     <main>
       <PageHero
         eyebrow="Contact"
-        title="Start a project."
+        title="Start a *project.*"
         subtitle="Planning a campaign or a film? Tell us what you have in mind."
       />
       <Contact />

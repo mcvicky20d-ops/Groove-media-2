@@ -8,7 +8,7 @@ import Reveal from "@/components/ui/Reveal";
  * Conversion band reused at the bottom of the home and weddings pages.
  */
 export default function CTASection({
-  title = "Let's make something cinematic.",
+  title = "Let's make something *cinematic.*",
   text = "If you're planning a campaign or a film, we'd love to hear about it.",
 }) {
   return (

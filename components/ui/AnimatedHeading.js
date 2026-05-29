@@ -56,15 +56,29 @@ export default function AnimatedHeading({
     return () => ctx.revert();
   }, [delay]);
 
+  // Words wrapped in *asterisks* render as elegant serif-italic accents.
   const words = String(text).split(" ");
 
   return (
     <Tag ref={ref} className={className}>
-      {words.map((word, i) => (
-        <span key={i} className="reveal-line mr-[0.25em] inline-block align-top">
-          <span className="reveal-word inline-block">{word}</span>
-        </span>
-      ))}
+      {words.map((word, i) => {
+        const isAccent = /^\*.+\*$/.test(word);
+        const clean = isAccent ? word.slice(1, -1) : word;
+        return (
+          <span
+            key={i}
+            className="reveal-line mr-[0.25em] inline-block align-top"
+          >
+            <span
+              className={`reveal-word inline-block ${
+                isAccent ? "accent-serif text-gold" : ""
+              }`}
+            >
+              {clean}
+            </span>
+          </span>
+        );
+      })}
     </Tag>
   );
 }

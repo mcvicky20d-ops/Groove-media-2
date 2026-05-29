@@ -34,7 +34,7 @@ export default function MagneticButton({
   };
 
   const base =
-    "relative inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm uppercase tracking-wide transition-colors duration-300 ease-cinematic";
+    "shine-btn group/btn relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-7 py-3.5 text-sm uppercase tracking-wide transition-colors duration-300 ease-cinematic";
   const variants = {
     solid: "bg-gold text-ink hover:bg-bone",
     outline: "border border-bone/30 text-bone hover:border-gold hover:text-gold",
@@ -50,7 +50,13 @@ export default function MagneticButton({
       style={{ willChange: "transform" }}
     >
       <span className={`${base} ${variants[variant]} ${className}`}>
-        {children}
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 ease-cinematic group-hover/btn:translate-x-full"
+        />
+        <span className="relative z-10 inline-flex items-center gap-2">
+          {children}
+        </span>
       </span>
     </span>
   );

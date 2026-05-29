@@ -15,6 +15,7 @@ module.exports = {
       fontFamily: {
         display: ["var(--font-display)", "sans-serif"],
         body: ["var(--font-body)", "sans-serif"],
+        serif: ["var(--font-serif)", "Georgia", "serif"],
       },
       letterSpacing: {
         tightest: "-0.06em",

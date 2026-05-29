@@ -1,4 +1,4 @@
-import { Anton, Inter } from "next/font/google";
+import { Anton, Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
@@ -8,6 +8,7 @@ import ShaderBackground from "@/components/ShaderBackground";
 import GrainOverlay from "@/components/GrainOverlay";
 import FloatingActions from "@/components/FloatingActions";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
+import ScrollProgress from "@/components/ScrollProgress";
 
 const anton = Anton({
   weight: "400",
@@ -19,6 +20,16 @@ const anton = Anton({
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-body",
+  display: "swap",
+});
+
+// Elegant serif used for italic emphasis words inside display headings —
+// gives the editorial, premium "film studio" feel (A24-style).
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["500", "600"],
+  style: ["italic", "normal"],
+  variable: "--font-serif",
   display: "swap",
 });
 
@@ -114,7 +125,10 @@ const videoLd = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${anton.variable} ${inter.variable}`}>
+    <html
+      lang="en"
+      className={`${anton.variable} ${inter.variable} ${playfair.variable}`}
+    >
       <body>
         <script
           type="application/ld+json"
@@ -126,6 +140,7 @@ export default function RootLayout({ children }) {
         />
         <ShaderBackground />
         <GrainOverlay />
+        <ScrollProgress />
         <Preloader />
         <CustomCursor />
         <SmoothScroll>

@@ -14,7 +14,7 @@ export default function WeddingsPage() {
     <main>
       <PageHero
         eyebrow="Weddings Vertical"
-        title="The films that matter most."
+        title="The films that *matter* most."
         subtitle="The same filmmaking craft we bring to brands, for the day you'll relive forever."
         image="/assets/images/wedding.svg"
       />

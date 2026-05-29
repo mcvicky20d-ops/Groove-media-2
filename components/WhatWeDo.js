@@ -35,8 +35,8 @@ export default function WhatWeDo() {
             What We Do
           </p>
           <AnimatedHeading
-            text="Full-service production, from the first idea to the final cut."
-            className="display-line text-4xl text-bone sm:text-5xl lg:text-6xl"
+            text="Full-service production, from the first *idea* to the final cut."
+            className="display-line text-bone text-[clamp(2rem,5vw,3.75rem)]"
           />
         </div>
 
