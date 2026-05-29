@@ -5,9 +5,9 @@ import Reveal, { RevealGroup, RevealItem } from "@/components/ui/Reveal";
 import MagneticButton from "@/components/ui/MagneticButton";
 
 const GALLERY = [
-  { img: "/assets/images/wedding-1.svg", label: "The Ceremony" },
-  { img: "/assets/images/wedding-2.svg", label: "Candid Moments" },
-  { img: "/assets/images/wedding-3.svg", label: "The Celebration" },
+  { img: "/assets/images/wedding-1.jpg", label: "The Ceremony" },
+  { img: "/assets/images/wedding-2.jpg", label: "Candid Moments" },
+  { img: "/assets/images/wedding-3.jpg", label: "The Celebration" },
 ];
 
 export default function Weddings() {
@@ -20,10 +20,10 @@ export default function Weddings() {
           "radial-gradient(120% 120% at 50% 0%, #1c1610 0%, #0a0a0a 60%)",
       }}
     >
-      {/* Warm placeholder backdrop — swap for a wedding still/clip */}
+      {/* Warm wedding backdrop */}
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-20"
-        style={{ backgroundImage: "url(/assets/images/wedding.svg)" }}
+        className="absolute inset-0 bg-cover bg-center opacity-25"
+        style={{ backgroundImage: "url(/assets/images/wedding-bg.jpg)" }}
       />
       <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/70 to-transparent" />
 

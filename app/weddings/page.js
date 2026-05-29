@@ -16,7 +16,7 @@ export default function WeddingsPage() {
         eyebrow="Weddings Vertical"
         title="The films that *matter* most."
         subtitle="The same filmmaking craft we bring to brands, for the day you'll relive forever."
-        image="/assets/images/wedding.svg"
+        image="/assets/images/wedding-hero.jpg"
       />
       <Weddings />
       <CTASection
