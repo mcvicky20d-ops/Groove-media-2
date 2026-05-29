@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#241a10"/>
+      <stop offset="100%" stop-color="#0a0705"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="68%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#a9772a" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#a9772a" stop-opacity="0"/>
+    </radialGradient>
+    
+  <radialGradient id="vigwork-02.svg" cx="50%" cy="42%" r="75%">
+    <stop offset="55%" stop-color="#000000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000000" stop-opacity="0.75"/>
+  </radialGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#g)"/>
+  <rect width="1200" height="800" fill="url(#glow)"/>
+  <text x="1160" y="760" text-anchor="end" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="400" fill="#ffffff" fill-opacity="0.045">02</text>
+  <rect width="1200" height="800" fill="url(#vigwork-02.svg)"/>
+</svg>

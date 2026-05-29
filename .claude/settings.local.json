@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(ffmpeg -version)",
+      "Bash(curl --version)",
+      "Bash(rm -rf .next)",
+      "Bash(npm run *)"
+    ]
+  }
+}
