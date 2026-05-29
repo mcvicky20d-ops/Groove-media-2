@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import MagneticButton from "@/components/ui/MagneticButton";
+import TextRotator from "@/components/ui/TextRotator";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -120,7 +121,12 @@ export default function Hero() {
           <span className="bg-gradient-to-r from-gold via-[#E9CE7A] to-gold bg-clip-text text-transparent">
             films.
           </span>{" "}
-          For brands, people, and ideas.
+          For{" "}
+          <TextRotator
+            words={["brands.", "people.", "ideas."]}
+            srText="brands, people, and ideas."
+            className="text-gold"
+          />
         </motion.h1>
 
         <motion.p
