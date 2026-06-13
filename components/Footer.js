@@ -32,31 +32,21 @@ export default function Footer() {
                 Explore
               </p>
               <ul className="mt-4 space-y-3 text-bone/60">
-                <li>
-                  <Link href="/work" className="hover:text-bone">
-                    Work
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services" className="hover:text-bone">
-                    Services
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/weddings" className="hover:text-bone">
-                    Weddings
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/about" className="hover:text-bone">
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="hover:text-bone">
-                    Contact
-                  </Link>
-                </li>
+                {[
+                  ["Advertising", "/advertising"],
+                  ["Weddings", "/weddings"],
+                  ["Films", "/films"],
+                  ["Portfolio", "/portfolio"],
+                  ["Collaborate", "/collaborate"],
+                  ["About", "/about"],
+                  ["Contact", "/contact"],
+                ].map(([label, href]) => (
+                  <li key={href}>
+                    <Link href={href} className="hover:text-bone">
+                      {label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
             <div>

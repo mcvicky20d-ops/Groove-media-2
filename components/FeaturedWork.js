@@ -23,7 +23,7 @@ export default function FeaturedWork() {
               className="display-line text-bone text-[clamp(2rem,5vw,3.75rem)]"
             />
           </div>
-          <MagneticButton href="/work" variant="outline">
+          <MagneticButton href="/portfolio" variant="outline">
             View All Work
           </MagneticButton>
         </div>
@@ -32,7 +32,7 @@ export default function FeaturedWork() {
           {FEATURED.map((item) => (
             <RevealItem key={item.title}>
               <Link
-                href="/work"
+                href="/portfolio"
                 data-cursor="grow"
                 className="group relative block aspect-[4/5] overflow-hidden rounded-2xl"
               >

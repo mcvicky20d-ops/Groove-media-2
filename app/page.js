@@ -1,9 +1,9 @@
 import Hero from "@/components/Hero";
 import MarqueeStrip from "@/components/MarqueeStrip";
-import WhatWeDo from "@/components/WhatWeDo";
+import PillarCards from "@/components/PillarCards";
 import Approach from "@/components/Approach";
 import FeaturedWork from "@/components/FeaturedWork";
-import ClientMarquee from "@/components/ClientMarquee";
+import LogoWall from "@/components/LogoWall";
 import Stats from "@/components/Stats";
 import Testimonials from "@/components/Testimonials";
 import WorkMatters from "@/components/WorkMatters";
@@ -15,16 +15,17 @@ export default function Home() {
     <main>
       <Hero />
       <MarqueeStrip />
-      <WhatWeDo />
+      <PillarCards />
       <Approach />
       <FeaturedWork />
-      <div className="bg-ink pb-12">
-        <ClientMarquee />
-      </div>
+      <LogoWall title="Trusted by" />
       <Stats />
       <Testimonials />
       <WorkMatters />
-      <CTASection />
+      <CTASection
+        title="Have a story to *tell?*"
+        text="Let's create something meaningful together."
+      />
       <Footer />
     </main>
   );

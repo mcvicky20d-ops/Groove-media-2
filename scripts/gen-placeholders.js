@@ -55,6 +55,18 @@ still({ w: 1400, h: 1050, a: "#211a10", b: "#080604", glow: "#c9a227", gx: 60, g
 // Contact page banner (cool studio tone)
 still({ w: 1920, h: 1080, a: "#10161c", b: "#050708", glow: "#3a7bbf", gx: 65, gy: 25, file: "../contact.svg" });
 
+// Section / page banners for the new architecture
+still({ w: 1920, h: 1080, a: "#1c160c", b: "#070604", glow: "#c9a227", gx: 60, gy: 25, file: "../advertising.svg" });
+still({ w: 1920, h: 1080, a: "#0e1118", b: "#050608", glow: "#5b6b8c", gx: 55, gy: 22, file: "../films.svg" });
+still({ w: 1920, h: 1080, a: "#161616", b: "#060606", glow: "#9c7a3a", gx: 50, gy: 25, file: "../portfolio.svg" });
+still({ w: 1920, h: 1080, a: "#171019", b: "#070509", glow: "#8a5fae", gx: 60, gy: 28, file: "../collaborate.svg" });
+still({ w: 1400, h: 1050, a: "#101820", b: "#05080a", glow: "#3a7bbf", gx: 55, gy: 30, file: "../films-feature.svg" });
+
+// Team portraits (4:5)
+[["#1a1a1a","#c9a227"],["#171b1a","#2f9a8a"],["#1b1714","#c98a3a"],["#15171b","#5b7bbf"]].forEach(([base, glow], i) => {
+  still({ w: 1000, h: 1250, a: base, b: "#080808", glow, gx: 50, gy: 30, file: `../team-${i + 1}.svg` });
+});
+
 // Wedding gallery (warm tones)
 still({ w: 900, h: 1200, a: "#2a1d10", b: "#0d0805", glow: "#e0b872", gx: 50, gy: 30, file: "../wedding-1.svg" });
 still({ w: 900, h: 1200, a: "#241910", b: "#0b0705", glow: "#d8a86a", gx: 40, gy: 40, file: "../wedding-2.svg" });

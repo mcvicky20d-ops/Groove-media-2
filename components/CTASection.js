@@ -24,7 +24,7 @@ export default function CTASection({
             <MagneticButton href="/contact" variant="solid">
               Start a Project
             </MagneticButton>
-            <MagneticButton href="/work" variant="outline">
+            <MagneticButton href="/portfolio" variant="outline">
               See Our Work
             </MagneticButton>
           </div>

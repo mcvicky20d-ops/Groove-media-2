@@ -6,9 +6,11 @@ import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 
 const LINKS = [
-  { label: "Work", href: "/work" },
-  { label: "Services", href: "/services" },
+  { label: "Advertising", href: "/advertising" },
   { label: "Weddings", href: "/weddings" },
+  { label: "Films", href: "/films" },
+  { label: "Portfolio", href: "/portfolio" },
+  { label: "Collaborate", href: "/collaborate" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
@@ -46,14 +48,14 @@ export default function Navbar() {
           The Groove<span className="text-gold">.</span>Media
         </Link>
 
-        <ul className="hidden items-center gap-8 md:flex">
+        <ul className="hidden items-center gap-5 lg:flex xl:gap-7">
           {LINKS.map((link) => {
             const active = pathname === link.href;
             return (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`group relative text-sm uppercase tracking-wide transition-colors hover:text-bone ${
+                  className={`group relative text-xs uppercase tracking-wide transition-colors hover:text-bone xl:text-sm ${
                     active ? "text-bone" : "text-bone/70"
                   }`}
                 >
@@ -71,7 +73,7 @@ export default function Navbar() {
 
         <button
           onClick={() => setOpen((v) => !v)}
-          className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 md:hidden"
+          className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 lg:hidden"
           aria-label="Toggle menu"
         >
           <span
@@ -99,7 +101,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="overflow-hidden md:hidden"
+            className="overflow-hidden lg:hidden"
           >
             <ul className="container-x flex flex-col gap-6 py-8">
               {LINKS.map((link) => (
