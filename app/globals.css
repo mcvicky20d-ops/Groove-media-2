@@ -62,6 +62,23 @@ html.lenis body {
   color: #0a0a0a;
 }
 
+/* Keyboard focus — visible gold ring for keyboard users (the custom cursor
+   hides the pointer, so focus states are essential for accessibility).
+   Mouse users don't see it thanks to :focus-visible. */
+:focus-visible {
+  outline: 2px solid #c9a227;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #c9a227;
+  outline-offset: 3px;
+}
+
 /* Thin gold scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

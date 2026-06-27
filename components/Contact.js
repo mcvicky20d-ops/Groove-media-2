@@ -141,6 +141,8 @@ export default function Contact() {
                 value={form.name}
                 onChange={update}
                 placeholder="Your name"
+                aria-label="Your name"
+                autoComplete="name"
                 className={inputClass}
               />
               <input
@@ -150,21 +152,30 @@ export default function Contact() {
                 value={form.email}
                 onChange={update}
                 placeholder="Email"
+                aria-label="Email address"
+                autoComplete="email"
                 className={inputClass}
               />
               <input
                 required
+                type="tel"
                 name="phone"
                 value={form.phone}
                 onChange={update}
                 placeholder="Phone"
+                aria-label="Phone number"
+                autoComplete="tel"
                 className={inputClass}
               />
               <div>
-                <label className="text-xs uppercase tracking-[0.2em] text-bone/40">
+                <label
+                  htmlFor="projectType"
+                  className="text-xs uppercase tracking-[0.2em] text-bone/40"
+                >
                   Project Type
                 </label>
                 <select
+                  id="projectType"
                   name="projectType"
                   value={form.projectType}
                   onChange={update}
@@ -183,6 +194,7 @@ export default function Contact() {
                 onChange={update}
                 rows={4}
                 placeholder="Tell us about your project"
+                aria-label="Tell us about your project"
                 className={`${inputClass} resize-none`}
               />
             </div>

@@ -16,7 +16,7 @@ export default function PortfolioPage() {
       <PageHero
         eyebrow="Portfolio"
         title="Selected *work*."
-        subtitle="Advertising, weddings, films and photography — in one place."
+        subtitle="Advertising, weddings, jewellery, architecture, films and photography — in one place."
         image="/assets/images/portfolio.jpg"
       />
       <FilterGallery />
