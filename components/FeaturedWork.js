@@ -6,9 +6,9 @@ import { RevealGroup, RevealItem } from "@/components/ui/Reveal";
 import MagneticButton from "@/components/ui/MagneticButton";
 
 const FEATURED = [
-  { title: "Brand Film", tag: "Advertising", img: "/assets/images/portfolio/work-01.svg" },
-  { title: "Fashion Campaign", tag: "Retail", img: "/assets/images/portfolio/work-02.svg" },
-  { title: "Product Story", tag: "Commercial", img: "/assets/images/portfolio/work-04.svg" },
+  { title: "Brand Film", tag: "Advertising", img: "/assets/images/portfolio/work-01.jpg" },
+  { title: "Fashion Campaign", tag: "Retail", img: "/assets/images/portfolio/work-02.jpg" },
+  { title: "Product Story", tag: "Commercial", img: "/assets/images/portfolio/work-04.jpg" },
 ];
 
 export default function FeaturedWork() {

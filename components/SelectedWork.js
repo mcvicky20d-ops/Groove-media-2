@@ -11,15 +11,15 @@ import ClientMarquee from "@/components/ClientMarquee";
  * video is present it plays muted on hover and pauses on leave.
  */
 const WORK = [
-  { title: "Brand Film", tag: "Advertising", span: "md:col-span-2 md:row-span-2", img: "/assets/images/portfolio/work-01.svg", video: "/assets/videos/work/work-01.mp4" },
-  { title: "Fashion Campaign", tag: "Retail", span: "", img: "/assets/images/portfolio/work-02.svg", video: "" },
-  { title: "Hospitality", tag: "Hotels", span: "", img: "/assets/images/portfolio/work-03.svg", video: "" },
-  { title: "Product Story", tag: "Commercial", span: "md:col-span-2", img: "/assets/images/portfolio/work-04.svg", video: "/assets/videos/work/work-04.mp4" },
-  { title: "Digital Content", tag: "Social", span: "", img: "/assets/images/portfolio/work-05.svg", video: "" },
-  { title: "Culture Film", tag: "Editorial", span: "", img: "/assets/images/portfolio/work-06.svg", video: "" },
-  { title: "Jewellery Spot", tag: "Luxury", span: "", img: "/assets/images/portfolio/work-07.svg", video: "" },
-  { title: "Music Video", tag: "Artist", span: "", img: "/assets/images/portfolio/work-08.svg", video: "" },
-  { title: "Wedding Story", tag: "Weddings", span: "", img: "/assets/images/portfolio/work-09.svg", video: "" },
+  { title: "Brand Film", tag: "Advertising", span: "md:col-span-2 md:row-span-2", img: "/assets/images/portfolio/work-01.jpg", video: "/assets/videos/work/work-01.mp4" },
+  { title: "Fashion Campaign", tag: "Retail", span: "", img: "/assets/images/portfolio/work-02.jpg", video: "" },
+  { title: "Hospitality", tag: "Hotels", span: "", img: "/assets/images/portfolio/work-03.jpg", video: "" },
+  { title: "Product Story", tag: "Commercial", span: "md:col-span-2", img: "/assets/images/portfolio/work-04.jpg", video: "/assets/videos/work/work-04.mp4" },
+  { title: "Digital Content", tag: "Social", span: "", img: "/assets/images/portfolio/work-05.jpg", video: "" },
+  { title: "Culture Film", tag: "Editorial", span: "", img: "/assets/images/portfolio/work-06.jpg", video: "" },
+  { title: "Jewellery Spot", tag: "Luxury", span: "", img: "/assets/images/portfolio/work-07.jpg", video: "" },
+  { title: "Music Video", tag: "Artist", span: "", img: "/assets/images/portfolio/work-08.jpg", video: "" },
+  { title: "Wedding Story", tag: "Weddings", span: "", img: "/assets/images/portfolio/work-09.jpg", video: "" },
 ];
 
 function WorkTile({ item }) {

@@ -17,7 +17,7 @@ export default function PortfolioPage() {
         eyebrow="Portfolio"
         title="Selected *work*."
         subtitle="Advertising, weddings, films and photography — in one place."
-        image="/assets/images/portfolio.svg"
+        image="/assets/images/portfolio.jpg"
       />
       <FilterGallery />
       <LogoWall />

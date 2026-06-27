@@ -28,7 +28,7 @@ export default function AdvertisingPage() {
         eyebrow="Advertising"
         title="Films and campaigns for modern *brands*."
         subtitle="Story-led advertising — from a single hero film to an always-on content engine."
-        image="/assets/images/advertising.svg"
+        image="/assets/images/advertising.jpg"
       />
       <SubNav items={TABS} />
 
@@ -38,7 +38,7 @@ export default function AdvertisingPage() {
         title="Brand films that say something."
         intro="Concept-led films built to make a brand felt, not just seen."
         items={["Ad films", "Product films", "Corporate films", "Launch campaigns"]}
-        image="/assets/images/portfolio/work-01.svg"
+        image="/assets/images/portfolio/work-01.jpg"
       />
       <ContentSection
         id="commercial-photography"
@@ -46,7 +46,7 @@ export default function AdvertisingPage() {
         title="Photography with cinematic intent."
         intro="Stills shot with the same eye for light and detail as our films."
         items={["Product photography", "Fashion photography", "Hospitality photography", "Interior photography"]}
-        image="/assets/images/portfolio/work-02.svg"
+        image="/assets/images/portfolio/work-02.jpg"
         reverse
         dark
       />
@@ -56,7 +56,7 @@ export default function AdvertisingPage() {
         title="An always-on content engine."
         intro="Consistent, platform-native content that keeps brands present and relevant."
         items={["Monthly retainers", "Reels", "Social content", "Creator campaigns"]}
-        image="/assets/images/portfolio/work-05.svg"
+        image="/assets/images/portfolio/work-05.jpg"
       />
       <ContentSection
         id="hospitality"
@@ -64,7 +64,7 @@ export default function AdvertisingPage() {
         title="Spaces, shot to sell a feeling."
         intro="Films and stills that capture the experience of a place — for hotels, resorts and developments."
         items={["Property & resort films", "Hotel brand content", "Interior photography", "Walkthrough films"]}
-        image="/assets/images/portfolio/work-03.svg"
+        image="/assets/images/portfolio/work-03.jpg"
         reverse
         dark
       />
@@ -74,7 +74,7 @@ export default function AdvertisingPage() {
         title="One idea, every platform."
         intro="Integrated campaigns with a single visual language across every cutdown and format."
         items={["Integrated campaigns", "360° content", "Launch films", "Performance creatives"]}
-        image="/assets/images/portfolio/work-04.svg"
+        image="/assets/images/portfolio/work-04.jpg"
       />
 
       <CaseStudyGrid />

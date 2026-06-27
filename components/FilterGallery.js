@@ -4,17 +4,17 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 const ITEMS = [
-  { title: "Brand Film", cat: "Advertising", img: "/assets/images/portfolio/work-01.svg" },
-  { title: "Fashion Campaign", cat: "Photography", img: "/assets/images/portfolio/work-02.svg" },
-  { title: "Hospitality", cat: "Advertising", img: "/assets/images/portfolio/work-03.svg" },
-  { title: "Product Story", cat: "Photography", img: "/assets/images/portfolio/work-04.svg" },
-  { title: "Digital Content", cat: "Advertising", img: "/assets/images/portfolio/work-05.svg" },
-  { title: "Culture Film", cat: "Films", img: "/assets/images/portfolio/work-06.svg" },
-  { title: "Jewellery Spot", cat: "Advertising", img: "/assets/images/portfolio/work-07.svg" },
-  { title: "Music Video", cat: "Films", img: "/assets/images/portfolio/work-08.svg" },
+  { title: "Brand Film", cat: "Advertising", img: "/assets/images/portfolio/work-01.jpg" },
+  { title: "Fashion Campaign", cat: "Photography", img: "/assets/images/portfolio/work-02.jpg" },
+  { title: "Hospitality", cat: "Advertising", img: "/assets/images/portfolio/work-03.jpg" },
+  { title: "Product Story", cat: "Photography", img: "/assets/images/portfolio/work-04.jpg" },
+  { title: "Digital Content", cat: "Advertising", img: "/assets/images/portfolio/work-05.jpg" },
+  { title: "Culture Film", cat: "Films", img: "/assets/images/portfolio/work-06.jpg" },
+  { title: "Jewellery Spot", cat: "Advertising", img: "/assets/images/portfolio/work-07.jpg" },
+  { title: "Music Video", cat: "Films", img: "/assets/images/portfolio/work-08.jpg" },
   { title: "Wedding Story", cat: "Weddings", img: "/assets/images/wedding-1.jpg" },
   { title: "The Ceremony", cat: "Weddings", img: "/assets/images/wedding-2.jpg" },
-  { title: "Documentary", cat: "Films", img: "/assets/images/films-feature.svg" },
+  { title: "Documentary", cat: "Films", img: "/assets/images/films-feature.jpg" },
   { title: "Celebration", cat: "Weddings", img: "/assets/images/wedding-3.jpg" },
 ];
 

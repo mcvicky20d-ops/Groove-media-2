@@ -25,7 +25,7 @@ export default function FilmsPage() {
         eyebrow="Films"
         title="Original documentaries, music videos and *stories*."
         subtitle="The narrative side of Groove — work we make because it matters, not just because it's briefed."
-        image="/assets/images/films.svg"
+        image="/assets/images/films.jpg"
       />
       <SubNav items={TABS} />
 
@@ -35,7 +35,7 @@ export default function FilmsPage() {
         title="Real people, honest frames."
         intro="Long-form documentary work — including an ongoing project on the tribal communities of the Kodaikanal hills."
         items={["Feature documentaries", "Short docs", "Branded documentaries", "Social-impact films"]}
-        image="/assets/images/films-feature.svg"
+        image="/assets/images/films-feature.jpg"
       />
       <ContentSection
         id="music-videos"
@@ -43,7 +43,7 @@ export default function FilmsPage() {
         title="Music, given a picture."
         intro="Music videos and live sessions for independent artists and labels."
         items={["Independent artists", "Labels", "Live sessions", "Lyric & performance films"]}
-        image="/assets/images/portfolio/work-08.svg"
+        image="/assets/images/portfolio/work-08.jpg"
         reverse
         dark
       />
@@ -53,7 +53,7 @@ export default function FilmsPage() {
         title="Stories worth ten minutes."
         intro="Short narrative films — a space to experiment with craft and voice."
         items={["Narrative shorts", "Anthologies", "Festival submissions", "Concept films"]}
-        image="/assets/images/portfolio/work-06.svg"
+        image="/assets/images/portfolio/work-06.jpg"
       />
       <ContentSection
         id="original-productions"
@@ -61,7 +61,7 @@ export default function FilmsPage() {
         title="Made by Groove, for the world."
         intro="Self-initiated productions where we own the idea end to end."
         items={["Original series", "Branded originals", "Independent cinema", "Web films"]}
-        image="/assets/images/portfolio/work-09.svg"
+        image="/assets/images/portfolio/work-09.jpg"
         reverse
         dark
       />
@@ -71,7 +71,7 @@ export default function FilmsPage() {
         title="What we're building next."
         intro="Projects currently in development — the future of the studio."
         items={["Feature documentaries", "Branded originals", "Independent cinema", "Long-form series"]}
-        image="/assets/images/films.svg"
+        image="/assets/images/films.jpg"
       />
 
       <CTASection

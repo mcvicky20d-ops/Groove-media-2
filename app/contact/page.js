@@ -47,7 +47,7 @@ export default function ContactPage() {
         eyebrow="Contact"
         title="Let's create something *meaningful*."
         subtitle="Planning a campaign or a film? Tell us what you have in mind."
-        image="/assets/images/contact.svg"
+        image="/assets/images/contact.jpg"
       />
       <SubNav items={TABS} />
 

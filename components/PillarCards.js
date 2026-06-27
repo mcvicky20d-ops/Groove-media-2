@@ -9,7 +9,7 @@ const PILLARS = [
     title: "Advertising",
     desc: "Films and campaigns for modern brands.",
     href: "/advertising",
-    img: "/assets/images/advertising.svg",
+    img: "/assets/images/advertising.jpg",
   },
   {
     title: "Weddings",
@@ -21,7 +21,7 @@ const PILLARS = [
     title: "Films",
     desc: "Original documentaries, music videos and narrative productions.",
     href: "/films",
-    img: "/assets/images/films.svg",
+    img: "/assets/images/films.jpg",
   },
 ];
 

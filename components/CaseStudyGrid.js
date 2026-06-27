@@ -4,12 +4,12 @@ import AnimatedHeading from "@/components/ui/AnimatedHeading";
 import { RevealGroup, RevealItem } from "@/components/ui/Reveal";
 
 const STUDIES = [
-  { client: "Wrangler", type: "Brand Campaign", img: "/assets/images/portfolio/work-02.svg", result: "Denim launch film + fashion stills" },
-  { client: "ITC Hotels", type: "Hospitality", img: "/assets/images/portfolio/work-03.svg", result: "Property & experience films" },
-  { client: "Hilton", type: "Hospitality", img: "/assets/images/portfolio/work-08.svg", result: "Brand & interiors photography" },
-  { client: "Phoenix Marketcity", type: "Retail", img: "/assets/images/portfolio/work-05.svg", result: "Seasonal campaign content" },
-  { client: "NAC Jewellers", type: "Luxury", img: "/assets/images/portfolio/work-07.svg", result: "Product film + commercial stills" },
-  { client: "Myntra", type: "Fashion / E-com", img: "/assets/images/portfolio/work-01.svg", result: "Social-first content production" },
+  { client: "Wrangler", type: "Brand Campaign", img: "/assets/images/portfolio/work-02.jpg", result: "Denim launch film + fashion stills" },
+  { client: "ITC Hotels", type: "Hospitality", img: "/assets/images/portfolio/work-03.jpg", result: "Property & experience films" },
+  { client: "Hilton", type: "Hospitality", img: "/assets/images/portfolio/work-08.jpg", result: "Brand & interiors photography" },
+  { client: "Phoenix Marketcity", type: "Retail", img: "/assets/images/portfolio/work-05.jpg", result: "Seasonal campaign content" },
+  { client: "NAC Jewellers", type: "Luxury", img: "/assets/images/portfolio/work-07.jpg", result: "Product film + commercial stills" },
+  { client: "Myntra", type: "Fashion / E-com", img: "/assets/images/portfolio/work-01.jpg", result: "Social-first content production" },
 ];
 
 export default function CaseStudyGrid({ id = "case-studies" }) {

@@ -30,7 +30,7 @@ export default function Approach() {
           <div className="group relative aspect-[4/3] overflow-hidden rounded-2xl">
             <div
               className="absolute inset-0 scale-105 bg-cover bg-center transition-transform duration-[1.2s] ease-cinematic group-hover:scale-110"
-              style={{ backgroundImage: "url(/assets/images/approach.svg)" }}
+              style={{ backgroundImage: "url(/assets/images/approach.jpg)" }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent" />
             <div className="absolute bottom-6 left-6">

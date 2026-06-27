@@ -29,7 +29,7 @@ export default function AboutPage() {
         eyebrow="About · Est. 2018"
         title="A film studio built on *craft*."
         subtitle="Films, photography and stories — production for brands, people, and ideas."
-        image="/assets/images/about-hero.svg"
+        image="/assets/images/about-hero.jpg"
       />
       <SubNav items={TABS} />
 
