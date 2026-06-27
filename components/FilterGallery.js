@@ -16,6 +16,10 @@ const ITEMS = [
   { title: "The Ceremony", cat: "Weddings", img: "/assets/images/wedding-2.jpg" },
   { title: "Documentary", cat: "Films", img: "/assets/images/films-feature.jpg" },
   { title: "Celebration", cat: "Weddings", img: "/assets/images/wedding-3.jpg" },
+  { title: "Hotels & Resorts", cat: "Advertising", img: "/assets/images/hotel-1.jpg" },
+  { title: "Real Estate", cat: "Advertising", img: "/assets/images/realestate-1.jpg" },
+  { title: "Interiors", cat: "Photography", img: "/assets/images/realestate-2.jpg" },
+  { title: "Resort Stay", cat: "Photography", img: "/assets/images/hotel-2.jpg" },
 ];
 
 const CATS = ["All", "Advertising", "Weddings", "Films", "Photography"];

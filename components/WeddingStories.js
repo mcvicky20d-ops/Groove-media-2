@@ -8,9 +8,9 @@ import { RevealGroup, RevealItem } from "@/components/ui/Reveal";
  * and narratives more than portfolios.
  */
 const STORIES = [
-  { couple: "Ananya & Arjun", place: "Chennai", note: "A monsoon morning wedding, full of quiet, candid joy.", img: "/assets/images/wedding-1.jpg" },
-  { couple: "Priya & Vishal", place: "Coimbatore", note: "Two families, one unforgettable celebration of colour.", img: "/assets/images/wedding-2.jpg" },
-  { couple: "Meera & Karthik", place: "Goa", note: "A destination wedding by the sea, shot like a film.", img: "/assets/images/wedding-3.jpg" },
+  { couple: "Raja & Saranya", place: "Chennai", note: "A morning wedding full of quiet, candid joy.", img: "/assets/images/wedding-4.jpg" },
+  { couple: "Ravi & Sahana", place: "Coimbatore", note: "Two families, one unforgettable celebration of colour.", img: "/assets/images/wedding-5.jpg" },
+  { couple: "Meera & Karthik", place: "Hampi", note: "A destination shoot among the stones, shot like a film.", img: "/assets/images/wedding-6.jpg" },
 ];
 
 export default function WeddingStories({ id = "stories" }) {
