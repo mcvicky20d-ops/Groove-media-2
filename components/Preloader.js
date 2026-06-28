@@ -56,7 +56,10 @@ export default function Preloader() {
       "-=0.15"
     );
 
-    return () => tl.kill();
+    return () => {
+      tl.kill();
+      document.body.style.overflow = "";
+    };
   }, []);
 
   if (done) return null;
@@ -74,7 +77,7 @@ export default function Preloader() {
               ref={(el) => (lettersRef.current[i] = el)}
               className="inline-block"
             >
-              {char === " " ? " " : char}
+              {char === " " ? " " : char}
             </span>
           </span>
         ))}

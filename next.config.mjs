@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
+  // Disabled: StrictMode double-invokes effects in dev, which replayed the
+  // one-shot intro animation (Preloader) twice. Production never double-invokes,
+  // so this only affects the dev experience. Turning it off makes dev match prod.
+  reactStrictMode: false,
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "**" },
