@@ -68,10 +68,13 @@ export default function AnimatedHeading({
         const isAccent = !!m;
         const clean = isAccent ? m[1] : word;
         const trail = isAccent ? m[2] : "";
+        const isLast = i === words.length - 1;
         return (
           <span
             key={i}
-            className="reveal-line mr-[0.4em] inline-block align-top"
+            className={`reveal-line inline-block align-top ${
+              isLast ? "" : "mr-[0.4em]"
+            }`}
           >
             <span
               className={`reveal-word inline-block ${
