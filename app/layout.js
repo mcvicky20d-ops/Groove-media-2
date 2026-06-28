@@ -118,7 +118,7 @@ const videoLd = {
     name: "The Groove Media",
     logo: {
       "@type": "ImageObject",
-      url: `${siteUrl}/assets/images/logo.png`,
+      url: `${siteUrl}/assets/images/og-image.svg`,
     },
   },
 };

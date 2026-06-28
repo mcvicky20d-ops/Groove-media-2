@@ -39,32 +39,36 @@ export default function TextRotator({
   const longest = words.reduce((a, b) => (b.length > a.length ? b : a), "");
 
   return (
-    <span className="relative inline-block align-baseline">
-      {/* sizer: reserves size + baseline, never visible */}
-      <span aria-hidden="true" className="invisible whitespace-nowrap">
+    <span className="relative inline-block align-baseline leading-[0.82]">
+      {/* sizer: reserves size + baseline, never visible. Tight line-height
+          makes the clip box hug the caps so rotating words can't peek into a
+          lower line-band during the slide. */}
+      <span aria-hidden="true" className="invisible whitespace-nowrap leading-[0.82]">
         {longest}
       </span>
 
       {/* clip layer */}
       <span
         aria-hidden="true"
-        className="absolute inset-0 overflow-hidden"
+        className="absolute inset-0 flex items-center overflow-hidden leading-[0.82]"
       >
         {animate ? (
           <AnimatePresence initial={false}>
             <motion.span
               key={index}
-              className={`absolute inset-0 whitespace-nowrap ${className}`}
-              initial={{ y: "110%" }}
+              className={`absolute inset-0 flex items-center whitespace-nowrap leading-[0.82] ${className}`}
+              initial={{ y: "105%" }}
               animate={{ y: "0%" }}
-              exit={{ y: "-110%" }}
+              exit={{ y: "-105%" }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
               {words[index]}
             </motion.span>
           </AnimatePresence>
         ) : (
-          <span className={`absolute inset-0 whitespace-nowrap ${className}`}>
+          <span
+            className={`absolute inset-0 flex items-center whitespace-nowrap leading-[0.82] ${className}`}
+          >
             {words[0]}
           </span>
         )}
