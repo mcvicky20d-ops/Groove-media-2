@@ -38,7 +38,7 @@ export default function AdvertisingPage() {
         title="Brand films that say something."
         intro="Concept-led films built to make a brand felt, not just seen."
         items={["Ad films", "Product films", "Corporate films", "Launch campaigns"]}
-        image="/assets/images/portfolio/work-01.jpg"
+        image="/assets/images/cat/auto-1.webp"
       />
       <ContentSection
         id="commercial-photography"
@@ -46,7 +46,7 @@ export default function AdvertisingPage() {
         title="Photography with cinematic intent."
         intro="Stills shot with the same eye for light and detail as our films."
         items={["Product photography", "Fashion photography", "Hospitality photography", "Interior photography"]}
-        image="/assets/images/portfolio/work-02.jpg"
+        image="/assets/images/cat/photo-3.webp"
         reverse
         dark
       />
@@ -56,7 +56,7 @@ export default function AdvertisingPage() {
         title="An always-on content engine."
         intro="Consistent, platform-native content that keeps brands present and relevant."
         items={["Monthly retainers", "Reels", "Social content", "Creator campaigns"]}
-        image="/assets/images/portfolio/work-05.jpg"
+        image="/assets/images/cat/photo-2.webp"
       />
       <ContentSection
         id="hospitality"
@@ -74,7 +74,7 @@ export default function AdvertisingPage() {
         title="One idea, every platform."
         intro="Integrated campaigns with a single visual language across every cutdown and format."
         items={["Integrated campaigns", "360° content", "Launch films", "Performance creatives"]}
-        image="/assets/images/portfolio/work-04.jpg"
+        image="/assets/images/cat/auto-5.webp"
       />
 
       <CaseStudyGrid />

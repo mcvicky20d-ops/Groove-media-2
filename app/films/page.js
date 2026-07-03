@@ -43,7 +43,7 @@ export default function FilmsPage() {
         title="Music, given a picture."
         intro="Music videos and live sessions for independent artists and labels."
         items={["Independent artists", "Labels", "Live sessions", "Lyric & performance films"]}
-        image="/assets/images/portfolio/work-08.jpg"
+        image="/assets/images/cat/auto-3.webp"
         reverse
         dark
       />
@@ -53,7 +53,7 @@ export default function FilmsPage() {
         title="Stories worth ten minutes."
         intro="Short narrative films — a space to experiment with craft and voice."
         items={["Narrative shorts", "Anthologies", "Festival submissions", "Concept films"]}
-        image="/assets/images/portfolio/work-06.jpg"
+        image="/assets/images/wedding-5.jpg"
       />
       <ContentSection
         id="original-productions"
@@ -61,7 +61,7 @@ export default function FilmsPage() {
         title="Made by Groove, for the world."
         intro="Self-initiated productions where we own the idea end to end."
         items={["Original series", "Branded originals", "Independent cinema", "Web films"]}
-        image="/assets/images/portfolio/work-09.jpg"
+        image="/assets/images/cat/wed-1.jpg"
         reverse
         dark
       />

@@ -5,9 +5,15 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const ITEMS = [
   // Advertising
-  { title: "Brand Film", cat: "Advertising", img: "/assets/images/portfolio/work-01.jpg" },
-  { title: "Digital Content", cat: "Advertising", img: "/assets/images/portfolio/work-05.jpg" },
+  { title: "Brand Film", cat: "Advertising", img: "/assets/images/cat/auto-7.webp" },
+  { title: "Digital Content", cat: "Advertising", img: "/assets/images/cat/photo-2.webp" },
   { title: "Hospitality", cat: "Advertising", img: "/assets/images/portfolio/work-03.jpg" },
+  { title: "EV Fleet Campaign", cat: "Advertising", img: "/assets/images/cat/auto-5.webp" },
+  // Automotive
+  { title: "Night Rider", cat: "Automotive", img: "/assets/images/cat/auto-1.webp" },
+  { title: "Open Road", cat: "Automotive", img: "/assets/images/cat/auto-2.webp" },
+  { title: "In Motion", cat: "Automotive", img: "/assets/images/cat/auto-3.webp" },
+  { title: "Refex Mobility", cat: "Automotive", img: "/assets/images/cat/auto-6.webp" },
   // Weddings
   { title: "The Couple", cat: "Weddings", img: "/assets/images/wedding-hero.jpg" },
   { title: "Wedding Story", cat: "Weddings", img: "/assets/images/wedding-1.jpg" },
@@ -36,12 +42,12 @@ const ITEMS = [
   { title: "Music Video", cat: "Films", img: "/assets/images/portfolio/work-08.jpg" },
   { title: "Documentary", cat: "Films", img: "/assets/images/films-feature.jpg" },
   // Photography
-  { title: "Fashion Campaign", cat: "Photography", img: "/assets/images/portfolio/work-02.jpg" },
-  { title: "Product Story", cat: "Photography", img: "/assets/images/portfolio/work-04.jpg" },
+  { title: "Editorial", cat: "Photography", img: "/assets/images/cat/photo-1.webp" },
+  { title: "Timeless Collection", cat: "Photography", img: "/assets/images/cat/photo-3.webp" },
   { title: "Interiors", cat: "Photography", img: "/assets/images/realestate-2.jpg" },
 ];
 
-const CATS = ["All", "Advertising", "Weddings", "Jewellery", "Architecture", "Films", "Photography"];
+const CATS = ["All", "Advertising", "Automotive", "Weddings", "Jewellery", "Architecture", "Films", "Photography"];
 
 export default function FilterGallery() {
   const [cat, setCat] = useState("All");

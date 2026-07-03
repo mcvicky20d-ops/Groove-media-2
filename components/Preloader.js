@@ -73,9 +73,14 @@ export default function Preloader() {
       <h1 className="display-line flex flex-wrap justify-center px-6 text-center text-4xl text-bone sm:text-6xl md:text-7xl">
         {TITLE.split("").map((char, i) => (
           <span key={i} className="overflow-hidden">
+            {/* Letters start hidden via CSS so the server-rendered frame shows
+                a plain black screen. Without this, the SSR HTML flashed the
+                full title before hydration, then GSAP hid it and animated it
+                in — which read as the preloader "running twice". GSAP's
+                inline styles take over from the first animation frame. */}
             <span
               ref={(el) => (lettersRef.current[i] = el)}
-              className="inline-block"
+              className="inline-block translate-y-[120%] opacity-0"
             >
               {char === " " ? " " : char}
             </span>
