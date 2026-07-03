@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 const ITEMS = [
   // Advertising
   { title: "Brand Film", cat: "Advertising", img: "/assets/images/cat/auto-7.webp" },
-  { title: "Digital Content", cat: "Advertising", img: "/assets/images/cat/photo-2.webp" },
+  { title: "Digital Content", cat: "Advertising", img: "/assets/images/cat/jewel-7.webp" },
   { title: "Hospitality", cat: "Advertising", img: "/assets/images/portfolio/work-03.jpg" },
   { title: "EV Fleet Campaign", cat: "Advertising", img: "/assets/images/cat/auto-5.webp" },
   // Automotive

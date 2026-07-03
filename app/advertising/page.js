@@ -56,7 +56,7 @@ export default function AdvertisingPage() {
         title="An always-on content engine."
         intro="Consistent, platform-native content that keeps brands present and relevant."
         items={["Monthly retainers", "Reels", "Social content", "Creator campaigns"]}
-        image="/assets/images/cat/photo-2.webp"
+        image="/assets/images/cat/jewel-7.webp"
       />
       <ContentSection
         id="hospitality"

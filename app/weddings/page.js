@@ -37,7 +37,7 @@ export default function WeddingsPage() {
         title="Films that feel like the day."
         intro="Signature films and highlights crafted with a true filmmaking process."
         items={["Signature films", "Highlights", "Teasers", "Same-day edits"]}
-        image="/assets/images/wedding-1.jpg"
+        image="/assets/images/cat/wed-couple-3.webp"
       />
       <ContentSection
         id="wedding-photography"
@@ -45,7 +45,7 @@ export default function WeddingsPage() {
         title="Candid, never staged."
         intro="Photography that catches the real moments between the big ones."
         items={["Candid photography", "Traditional coverage", "Pre-wedding shoots", "Premium albums"]}
-        image="/assets/images/wedding-2.jpg"
+        image="/assets/images/cat/wed-couple-1.webp"
         reverse
         dark
       />
@@ -55,7 +55,7 @@ export default function WeddingsPage() {
         title="Anywhere your story takes us."
         intro="Full-crew destination coverage, planned and shot like a production."
         items={["Beach & hill weddings", "Palace & heritage venues", "Multi-day events", "Travel-ready crews"]}
-        image="/assets/images/wedding-3.jpg"
+        image="/assets/images/cat/wed-couple-2.webp"
       />
 
       <WeddingStories />
