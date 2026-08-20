@@ -1,8 +1,7 @@
 import PageHero from "@/components/PageHero";
 import SubNav from "@/components/SubNav";
-import ContentSection from "@/components/ContentSection";
+import SectionHeading from "@/components/SectionHeading";
 import BrandRow from "@/components/BrandRow";
-import CaseStudyGrid from "@/components/CaseStudyGrid";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
@@ -17,13 +16,12 @@ const TABS = [
   { id: "photography", label: "Photography" },
   { id: "content-production", label: "Content Production" },
   { id: "campaigns", label: "Campaigns" },
-  { id: "case-studies", label: "Case Studies" },
 ];
 
 const L = "/assets/images/brands";
 
-// Media are placeholders — drop each brand's real logo (`logo`), case film
-// (`video`) and stills (`images`) at these paths and it all shows automatically.
+// Logos + case media are placeholders — drop each brand's real logo (`logo`),
+// case film (`video`) and stills (`images`) at these paths and it all shows.
 const BRAND_FILMS = [
   { name: "Sree Kumaran", logo: `${L}/sree-kumaran.svg`, sector: "Jewellery", blurb: "Brand and product films for the heritage jeweller — crafted to make gold feel timeless.", video: "/assets/videos/showreel.mp4", images: ["/assets/images/cat/jewel-1.webp", "/assets/images/cat/jewel-3.webp", "/assets/images/cat/jewel-7.webp"] },
   { name: "Westin", logo: `${L}/westin.svg`, sector: "Hospitality", blurb: "Property and experience films for the Westin — selling the feeling of a stay.", video: "/assets/videos/work/work-01.mp4", images: ["/assets/images/cat/arch-1.jpg", "/assets/images/cat/arch-2.jpg", "/assets/images/portfolio/work-03.jpg"] },
@@ -57,56 +55,23 @@ export default function AdvertisingPage() {
       />
       <SubNav items={TABS} />
 
-      <ContentSection
-        id="brand-films"
-        eyebrow="01 — Brand Films"
-        title="Brand films that say something."
-        intro="Concept-led films built to make a brand felt, not just seen."
-        items={["Ad films", "Product films", "Corporate films", "Launch campaigns"]}
-        image="/assets/images/cat/auto-1.webp"
-      />
-      <div className="bg-ink pb-16 md:pb-20">
-        <BrandRow label="Brands we've filmed" brands={BRAND_FILMS} />
+      <SectionHeading id="brand-films" eyebrow="01 — Brand Films" title="Brand films that say *something*." />
+      <div className="bg-ink pb-16 md:pb-24">
+        <BrandRow label="" brands={BRAND_FILMS} />
       </div>
 
-      <ContentSection
-        id="photography"
-        eyebrow="02 — Photography"
-        title="Photography with cinematic intent."
-        intro="Stills shot with the same eye for light and detail as our films."
-        items={["Product photography", "Fashion photography", "Hospitality photography", "Interior photography"]}
-        image="/assets/images/cat/photo-3.webp"
-        reverse
-        dark
-      />
+      <SectionHeading id="photography" eyebrow="02 — Photography" title="Photography with cinematic *intent*." />
 
-      <ContentSection
-        id="content-production"
-        eyebrow="03 — Content Production"
-        title="An always-on content engine."
-        intro="Consistent, platform-native content that keeps brands present and relevant."
-        items={["Monthly retainers", "Reels", "Social content", "Creator campaigns"]}
-        image="/assets/images/cat/jewel-7.webp"
-      />
-      <div className="bg-ink pb-16 md:pb-20">
-        <BrandRow label="Brands on retainer" brands={CONTENT_BRANDS} />
+      <SectionHeading id="content-production" eyebrow="03 — Content Production" title="An always-on content *engine*." />
+      <div className="bg-ink pb-16 md:pb-24">
+        <BrandRow label="" brands={CONTENT_BRANDS} />
       </div>
 
-      <ContentSection
-        id="campaigns"
-        eyebrow="04 — Campaigns"
-        title="One idea, every platform."
-        intro="Integrated campaigns with a single visual language across every cutdown and format."
-        items={["Integrated campaigns", "360° content", "Launch films", "Performance creatives"]}
-        image="/assets/images/cat/auto-5.webp"
-        reverse
-        dark
-      />
-      <div className="bg-smoke pb-16 md:pb-20">
-        <BrandRow label="Campaign clients" brands={CAMPAIGN_BRANDS} />
+      <SectionHeading id="campaigns" eyebrow="04 — Campaigns" title="One idea, *every platform*." />
+      <div className="bg-ink pb-16 md:pb-24">
+        <BrandRow label="" brands={CAMPAIGN_BRANDS} />
       </div>
 
-      <CaseStudyGrid />
       <CTASection title="Have a campaign in *mind?*" />
       <Footer />
     </main>
