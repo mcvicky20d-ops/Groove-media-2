@@ -1,6 +1,7 @@
 import PageHero from "@/components/PageHero";
 import SubNav from "@/components/SubNav";
 import ContentSection from "@/components/ContentSection";
+import BrandRow from "@/components/BrandRow";
 import CaseStudyGrid from "@/components/CaseStudyGrid";
 import LogoWall from "@/components/LogoWall";
 import CTASection from "@/components/CTASection";
@@ -19,6 +20,122 @@ const TABS = [
   { id: "hospitality", label: "Hospitality & Real Estate" },
   { id: "campaigns", label: "Campaigns" },
   { id: "case-studies", label: "Case Studies" },
+];
+
+// Brand work per section. Media are placeholders — drop each brand's real
+// film + stills into `video` / `images` and the modal shows them automatically.
+const BRAND_FILMS = [
+  {
+    name: "Sree Kumaran",
+    sector: "Jewellery",
+    blurb:
+      "Brand and product films for the heritage jeweller — crafted to make gold feel timeless.",
+    video: "/assets/videos/showreel.mp4",
+    images: [
+      "/assets/images/cat/jewel-1.webp",
+      "/assets/images/cat/jewel-3.webp",
+      "/assets/images/cat/jewel-7.webp",
+    ],
+  },
+  {
+    name: "Westin",
+    sector: "Hospitality",
+    blurb:
+      "Property and experience films for the Westin — selling the feeling of a stay.",
+    images: [
+      "/assets/images/cat/arch-1.jpg",
+      "/assets/images/cat/arch-2.jpg",
+      "/assets/images/portfolio/work-03.jpg",
+    ],
+  },
+  {
+    name: "Refex",
+    sector: "Automotive / EV",
+    blurb:
+      "The EV fleet brand and campaign shoot for Refex Mobility — a clean-energy story on the move.",
+    video: "/assets/videos/work/work-01.mp4",
+    images: [
+      "/assets/images/cat/auto-5.webp",
+      "/assets/images/cat/auto-6.webp",
+      "/assets/images/cat/auto-7.webp",
+    ],
+  },
+  {
+    name: "Triune Tech",
+    sector: "Technology",
+    blurb:
+      "Corporate and product films for Triune — clarity and confidence for a technical story.",
+    images: ["/assets/images/cat/auto-1.webp", "/assets/images/portfolio/work-06.jpg"],
+  },
+];
+
+const CONTENT_BRANDS = [
+  {
+    name: "Phoenix Marketcity",
+    sector: "Retail",
+    blurb: "Always-on seasonal content that keeps the mall's calendar alive.",
+    images: ["/assets/images/cat/arch-2.jpg", "/assets/images/cat/photo-1.webp"],
+  },
+  {
+    name: "Pacifica",
+    sector: "Real Estate",
+    blurb: "Walkthroughs and lifestyle content for premium homes.",
+    images: ["/assets/images/realestate-1.jpg", "/assets/images/cat/arch-5.jpg"],
+  },
+  {
+    name: "Wrangler",
+    sector: "Fashion / Denim",
+    blurb: "Editorial fashion content and campaign stills.",
+    images: ["/assets/images/cat/photo-1.webp", "/assets/images/cat/photo-2.webp"],
+  },
+  {
+    name: "Jairam",
+    sector: "Jewellery",
+    blurb: "Social-first jewellery content, shot for scroll-stopping detail.",
+    images: ["/assets/images/cat/jewel-4.webp", "/assets/images/cat/jewel-2.webp"],
+  },
+  {
+    name: "Hilton",
+    sector: "Hospitality",
+    blurb: "Brand and interiors content for the property.",
+    images: [
+      "/assets/images/hotel-1.jpg",
+      "/assets/images/hotel-2.jpg",
+      "/assets/images/cat/arch-3.jpg",
+    ],
+  },
+];
+
+const CAMPAIGN_BRANDS = [
+  {
+    name: "Myntra",
+    sector: "Fashion / E-commerce",
+    blurb: "Social-first campaign content, cut for every platform and format.",
+    video: "/assets/videos/work/work-04.mp4",
+    images: ["/assets/images/cat/photo-2.webp", "/assets/images/cat/jewel-4.webp"],
+  },
+  {
+    name: "Narayana Pearls",
+    sector: "Jewellery",
+    blurb: "A pearl-and-gold campaign, shot fine-art.",
+    images: ["/assets/images/cat/jewel-1.webp", "/assets/images/cat/jewel-3.webp"],
+  },
+  {
+    name: "Goa Tourism — TITO's",
+    sector: "Nightlife / Casino",
+    blurb: "A high-energy campaign for Goa's nightlife and casino scene.",
+    images: ["/assets/images/cat/auto-2.webp", "/assets/images/cat/auto-3.webp"],
+  },
+  {
+    name: "NAC Jewellers",
+    sector: "Luxury",
+    blurb: "Product film and commercial stills for the flagship jeweller.",
+    images: [
+      "/assets/images/cat/jewel-5.jpg",
+      "/assets/images/cat/jewel-6.jpg",
+      "/assets/images/portfolio/work-07.jpg",
+    ],
+  },
 ];
 
 export default function AdvertisingPage() {
@@ -40,6 +157,10 @@ export default function AdvertisingPage() {
         items={["Ad films", "Product films", "Corporate films", "Launch campaigns"]}
         image="/assets/images/cat/auto-1.webp"
       />
+      <div className="bg-ink pb-16 md:pb-20">
+        <BrandRow label="Brands we've filmed" brands={BRAND_FILMS} />
+      </div>
+
       <ContentSection
         id="commercial-photography"
         eyebrow="02 — Commercial Photography"
@@ -50,6 +171,7 @@ export default function AdvertisingPage() {
         reverse
         dark
       />
+
       <ContentSection
         id="content-production"
         eyebrow="03 — Content Production"
@@ -58,6 +180,10 @@ export default function AdvertisingPage() {
         items={["Monthly retainers", "Reels", "Social content", "Creator campaigns"]}
         image="/assets/images/cat/jewel-7.webp"
       />
+      <div className="bg-ink pb-16 md:pb-20">
+        <BrandRow label="Brands on retainer" brands={CONTENT_BRANDS} />
+      </div>
+
       <ContentSection
         id="hospitality"
         eyebrow="04 — Hospitality & Real Estate"
@@ -68,6 +194,7 @@ export default function AdvertisingPage() {
         reverse
         dark
       />
+
       <ContentSection
         id="campaigns"
         eyebrow="05 — Campaigns"
@@ -76,6 +203,9 @@ export default function AdvertisingPage() {
         items={["Integrated campaigns", "360° content", "Launch films", "Performance creatives"]}
         image="/assets/images/cat/auto-5.webp"
       />
+      <div className="bg-ink pb-16 md:pb-20">
+        <BrandRow label="Campaign clients" brands={CAMPAIGN_BRANDS} />
+      </div>
 
       <CaseStudyGrid />
       <LogoWall title="Brands we've worked with" />
