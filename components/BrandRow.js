@@ -4,13 +4,14 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 /**
- * A row of clickable brand logos (text wordmarks as placeholders for real
- * logos). Clicking a brand opens a modal with a heading about the brand and
- * the work we did — an optional video plus an image gallery.
+ * A responsive grid of clickable brand LOGOS (no text). Each logo enlarges on
+ * hover; clicking opens a modal with a heading about the brand and the work we
+ * did — an optional video plus an image gallery.
  *
- * brands: [{ name, sector, blurb, video?, images: string[] }]
+ * brands: [{ name, logo, sector, blurb, video?, images: string[] }]
+ * `logo` is a swappable placeholder — drop the real logo file at that path.
  */
-export default function BrandRow({ label = "Selected brands", brands = [] }) {
+export default function BrandRow({ label = "Brands", brands = [] }) {
   const [active, setActive] = useState(null);
 
   useEffect(() => {
@@ -26,27 +27,32 @@ export default function BrandRow({ label = "Selected brands", brands = [] }) {
 
   return (
     <div className="container-x mt-10">
-      <p className="mb-5 text-xs uppercase tracking-[0.3em] text-bone/45">
-        {label}
-      </p>
-      <div className="flex flex-wrap gap-3">
+      {label && (
+        <p className="mb-6 text-xs uppercase tracking-[0.3em] text-bone/45">
+          {label}
+        </p>
+      )}
+
+      <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
         {brands.map((b) => (
-          <button
-            key={b.name}
-            onClick={() => setActive(b)}
-            data-cursor="grow"
-            aria-label={`See our work for ${b.name}`}
-            className="group flex min-h-[52px] items-center gap-2 rounded-lg border border-bone/15 bg-smoke/50 px-5 py-3 transition-all duration-300 hover:border-gold/60 hover:bg-smoke focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
-          >
-            <span className="font-display text-base uppercase tracking-wide text-bone/70 transition-colors group-hover:text-bone md:text-lg">
-              {b.name}
-            </span>
-            <span className="text-gold opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-              ↗
-            </span>
-          </button>
+          <li key={b.name}>
+            <button
+              onClick={() => setActive(b)}
+              data-cursor="grow"
+              aria-label={`See our work for ${b.name}`}
+              title={b.name}
+              className="group flex aspect-[3/2] w-full items-center justify-center overflow-hidden rounded-2xl border border-bone/10 bg-smoke/40 p-6 transition-colors duration-300 hover:border-gold/50 hover:bg-smoke focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={b.logo}
+                alt={`${b.name} logo`}
+                className="h-full max-h-20 w-auto max-w-full object-contain opacity-75 transition-all duration-500 ease-cinematic group-hover:scale-125 group-hover:opacity-100"
+              />
+            </button>
+          </li>
         ))}
-      </div>
+      </ul>
 
       {/* Modal */}
       <AnimatePresence>
@@ -68,7 +74,6 @@ export default function BrandRow({ label = "Selected brands", brands = [] }) {
               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
               className="relative my-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-bone/10 bg-smoke"
             >
-              {/* Close */}
               <button
                 onClick={() => setActive(null)}
                 aria-label="Close"
@@ -78,15 +83,25 @@ export default function BrandRow({ label = "Selected brands", brands = [] }) {
               </button>
 
               <div className="p-6 md:p-10">
-                <p className="text-xs uppercase tracking-[0.3em] text-gold">
-                  {active.sector}
-                </p>
-                <h3 className="mt-2 font-display text-3xl uppercase text-bone md:text-4xl">
-                  {active.name}
-                </h3>
-                <p className="mt-4 max-w-2xl text-bone/70">{active.blurb}</p>
+                <div className="flex items-center gap-4">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={active.logo}
+                    alt=""
+                    aria-hidden="true"
+                    className="h-14 w-14 shrink-0 object-contain"
+                  />
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.3em] text-gold">
+                      {active.sector}
+                    </p>
+                    <h3 className="font-display text-3xl uppercase text-bone md:text-4xl">
+                      {active.name}
+                    </h3>
+                  </div>
+                </div>
+                <p className="mt-5 max-w-2xl text-bone/70">{active.blurb}</p>
 
-                {/* Video */}
                 {active.video && (
                   <div className="mt-8 overflow-hidden rounded-xl border border-bone/10">
                     <video
@@ -101,7 +116,6 @@ export default function BrandRow({ label = "Selected brands", brands = [] }) {
                   </div>
                 )}
 
-                {/* Image gallery */}
                 {active.images?.length > 0 && (
                   <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
                     {active.images.map((src, i) => (
