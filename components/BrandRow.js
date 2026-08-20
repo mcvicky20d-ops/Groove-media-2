@@ -4,9 +4,10 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 /**
- * A responsive grid of clickable brand LOGOS (no text). Each logo enlarges on
- * hover; clicking opens a modal with a heading about the brand and the work we
- * did — an optional video plus an image gallery.
+ * A responsive grid of clickable brand LOGOS. Default state shows the logo only
+ * (no text); on hover a gold overlay fades in with the brand name centered over
+ * it (the thebanana.in portfolio pattern). Clicking opens a modal with a heading
+ * about the brand and the work we did — an optional video plus an image gallery.
  *
  * brands: [{ name, logo, sector, blurb, video?, images: string[] }]
  * `logo` is a swappable placeholder — drop the real logo file at that path.
@@ -33,7 +34,7 @@ export default function BrandRow({ label = "Brands", brands = [] }) {
         </p>
       )}
 
-      <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+      <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
         {brands.map((b) => (
           <li key={b.name}>
             <button
@@ -41,14 +42,20 @@ export default function BrandRow({ label = "Brands", brands = [] }) {
               data-cursor="grow"
               aria-label={`See our work for ${b.name}`}
               title={b.name}
-              className="group flex aspect-[3/2] w-full items-center justify-center overflow-hidden rounded-2xl border border-bone/10 bg-smoke/40 p-6 transition-colors duration-300 hover:border-gold/50 hover:bg-smoke focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
+              className="group relative flex aspect-square w-full items-center justify-center overflow-hidden rounded-lg border border-bone/10 bg-smoke/50 p-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={b.logo}
                 alt={`${b.name} logo`}
-                className="h-full max-h-20 w-auto max-w-full object-contain opacity-75 transition-all duration-500 ease-cinematic group-hover:scale-125 group-hover:opacity-100"
+                className="relative z-10 max-h-24 w-auto max-w-full object-contain opacity-80 transition-opacity duration-300 group-hover:opacity-0"
               />
+              {/* Gold overlay + name reveal on hover */}
+              <span className="absolute inset-0 z-20 flex items-center justify-center bg-gold px-4 text-center opacity-0 transition-opacity duration-300 ease-cinematic group-hover:opacity-100">
+                <span className="font-display text-lg uppercase leading-tight tracking-wide text-ink md:text-xl">
+                  {b.name}
+                </span>
+              </span>
             </button>
           </li>
         ))}
