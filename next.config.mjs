@@ -9,11 +9,13 @@ const nextConfig = {
       { protocol: "https", hostname: "**" },
     ],
   },
-  // Old routes → new architecture (preserve any inbound links / SEO).
+  // Retired routes → live pages (preserve any inbound links / SEO).
   async redirects() {
     return [
-      { source: "/work", destination: "/portfolio", permanent: true },
+      { source: "/work", destination: "/advertising", permanent: true },
       { source: "/services", destination: "/advertising", permanent: true },
+      { source: "/portfolio", destination: "/advertising", permanent: true },
+      { source: "/collaborate", destination: "/contact", permanent: true },
     ];
   },
 };

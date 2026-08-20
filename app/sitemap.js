@@ -12,8 +12,6 @@ export default function sitemap() {
     page("/advertising", 0.9),
     page("/weddings", 0.9),
     page("/films", 0.9),
-    page("/portfolio", 0.8),
-    page("/collaborate", 0.7),
     page("/about", 0.7),
     page("/contact", 0.7),
   ];

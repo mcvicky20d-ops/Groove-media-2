@@ -14,7 +14,6 @@ export const metadata = {
 
 const TABS = [
   { id: "start-a-project", label: "Start a Project" },
-  { id: "collaborate", label: "Collaborate" },
   { id: "careers", label: "Careers" },
 ];
 
@@ -54,15 +53,6 @@ export default function ContactPage() {
       <div id="start-a-project" className="scroll-mt-28">
         <Contact />
       </div>
-
-      <MiniCTA
-        id="collaborate"
-        eyebrow="Collaborate"
-        title="Creators, models, brands & *agencies*."
-        text="We're building a network of partners. If you create, model, style or market — let's connect."
-        href="/collaborate"
-        cta="Explore Collaborate"
-      />
 
       <MiniCTA
         id="careers"
