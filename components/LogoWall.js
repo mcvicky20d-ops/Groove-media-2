@@ -2,40 +2,48 @@
 
 import { RevealGroup, RevealItem } from "@/components/ui/Reveal";
 
+// Real client logos live in /public/assets/images/clients (drop-in swappable).
 const CLIENTS = [
-  "Wrangler",
-  "Hilton",
-  "ITC Hotels",
-  "Phoenix Marketcity",
-  "NAC Jewellers",
-  "Amazon",
-  "Myntra",
-  "Crocs",
+  { name: "ITC Hotels", logo: "/assets/images/clients/itc-hotels.webp" },
+  { name: "Hilton", logo: "/assets/images/clients/hilton.webp" },
+  { name: "Phoenix Marketcity", logo: "/assets/images/clients/phoenix-marketcity.webp" },
+  { name: "Myntra", logo: "/assets/images/clients/myntra.webp" },
+  { name: "Wrangler India", logo: "/assets/images/clients/wrangler-india.webp" },
+  { name: "NAC Jewellers", logo: "/assets/images/clients/nac-jewellers.webp" },
+  { name: "Crocs India", logo: "/assets/images/clients/crocs-india.webp" },
 ];
 
 /**
- * Client logo wall (text wordmarks as placeholders for real logos). Builds
- * instant trust. Pass `compact` for a tighter strip.
+ * Client logo wall. Logos ship on white backgrounds, so each sits on a light
+ * chip to read cleanly against the dark site.
  */
 export default function LogoWall({ title = "Trusted by" }) {
   return (
     <section className="bg-ink py-16 md:py-20">
       <div className="container-x">
         {title && (
-          <p className="eyebrow mb-10 justify-center text-center">{title}</p>
+          <p className="eyebrow mb-3 justify-center text-center">{title}</p>
         )}
+        <p className="mx-auto mb-10 max-w-md text-center text-bone/60">
+          Trusted by brands that care about the frame.
+        </p>
+
         <RevealGroup
           stagger={0.06}
-          className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-bone/10 bg-bone/10 sm:grid-cols-4"
+          className="mx-auto flex max-w-5xl flex-wrap justify-center gap-4"
         >
           {CLIENTS.map((c) => (
             <RevealItem
-              key={c}
-              className="flex items-center justify-center bg-ink px-4 py-8 transition-colors duration-500 hover:bg-smoke"
+              key={c.name}
+              className="flex h-24 w-[calc(50%-0.5rem)] items-center justify-center rounded-xl bg-bone/95 p-5 transition-transform duration-500 ease-cinematic hover:scale-[1.03] sm:w-[calc(33.333%-0.667rem)] lg:w-[calc(25%-0.75rem)]"
             >
-              <span className="font-display text-lg uppercase tracking-wide text-bone/50 transition-colors duration-300 hover:text-gold md:text-xl">
-                {c}
-              </span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={c.logo}
+                alt={`${c.name} logo`}
+                loading="lazy"
+                className="max-h-full max-w-full object-contain"
+              />
             </RevealItem>
           ))}
         </RevealGroup>

@@ -14,5 +14,8 @@ export default function sitemap() {
     page("/films", 0.9),
     page("/about", 0.7),
     page("/contact", 0.7),
+    page("/careers", 0.6),
+    page("/work-with-us", 0.6),
+    page("/updates", 0.6),
   ];
 }

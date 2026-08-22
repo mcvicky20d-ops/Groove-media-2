@@ -79,7 +79,7 @@ export default function Hero() {
             playsInline
             poster="/assets/images/hero-poster.svg"
           >
-            <source src="/assets/videos/hero-bg.mp4" type="video/mp4" />
+            <source src="/assets/videos/hero.mp4" type="video/mp4" />
           </video>
         ) : (
           <div

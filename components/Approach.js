@@ -6,18 +6,18 @@ import Reveal, { RevealGroup, RevealItem } from "@/components/ui/Reveal";
 const POINTS = [
   {
     n: "01",
-    title: "Idea-first",
-    desc: "Every project starts with the story — not the gear. We find the angle that makes people stop scrolling.",
+    title: "Idea first",
+    desc: "Every project starts with the story — not the gear. We find the angle that makes people stop and pay attention.",
   },
   {
     n: "02",
     title: "One team, end-to-end",
-    desc: "Direction, camera, and post under one roof means a tighter vision and a faster, calmer process.",
+    desc: "Direction, production, cinematography and post-production work together under one roof. A tighter vision. A smoother process.",
   },
   {
     n: "03",
     title: "Built for the platform",
-    desc: "From a 60-second TVC to a vertical cutdown — we craft for where your audience actually watches.",
+    desc: "From a campaign film to short-form digital content, we create for where the audience actually watches.",
   },
 ];
 
@@ -49,9 +49,9 @@ export default function Approach() {
           />
           <Reveal delay={0.1}>
             <p className="lead mt-6 max-w-lg">
-              We&apos;re a tight team of filmmakers who care about the details
+              We&apos;re a focused team of filmmakers who care about the details
               most people never notice — the ones that make a film feel
-              expensive, honest, and unmistakably yours.
+              considered, honest and unmistakably yours.
             </p>
           </Reveal>
 

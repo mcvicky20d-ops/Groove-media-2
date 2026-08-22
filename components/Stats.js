@@ -2,12 +2,12 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import AnimatedHeading from "@/components/ui/AnimatedHeading";
 
 const STATS = [
-  { value: 100, suffix: "+", label: "Film Projects" },
-  { value: 2018, suffix: "", label: "Established", raw: true },
-  { value: 7, suffix: "+", label: "Major Brands" },
-  { value: null, label: "End-to-End Production", text: "A→Z" },
+  { value: 500, suffix: "+", label: "Weddings" },
+  { value: 200, suffix: "+", label: "Advertising & Film Projects" },
+  { value: 50, suffix: "+", label: "Major Brands" },
 ];
 
 function Counter({ target, suffix = "", raw = false }) {
@@ -52,8 +52,16 @@ function Counter({ target, suffix = "", raw = false }) {
 export default function Stats() {
   return (
     <section className="relative py-24 md:py-28">
-      <div className="container-x grid grid-cols-2 gap-y-12 md:grid-cols-4">
-        {STATS.map((s, i) => (
+      <div className="container-x">
+        <div className="mb-14 text-center">
+          <p className="eyebrow justify-center">Experience</p>
+          <AnimatedHeading
+            text="Years of stories. Thousands of *frames*."
+            className="display-line mx-auto max-w-3xl text-bone text-[clamp(2rem,5vw,3.75rem)]"
+          />
+        </div>
+        <div className="grid grid-cols-1 gap-y-12 sm:grid-cols-3">
+          {STATS.map((s, i) => (
           <motion.div
             key={s.label}
             initial={{ opacity: 0, y: 30 }}
@@ -73,7 +81,8 @@ export default function Stats() {
               {s.label}
             </p>
           </motion.div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -14,7 +14,11 @@ const LINKS = [
 ];
 
 // "More" dropdown items.
-const MORE = [{ label: "Careers", href: "/about#careers" }];
+const MORE = [
+  { label: "Careers", href: "/careers" },
+  { label: "Work With Us", href: "/work-with-us" },
+  { label: "Updates", href: "/updates" },
+];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);

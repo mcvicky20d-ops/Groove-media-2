@@ -37,7 +37,9 @@ export default function Footer() {
                   ["Weddings", "/weddings"],
                   ["Films", "/films"],
                   ["About", "/about"],
-                  ["Careers", "/about#careers"],
+                  ["Careers", "/careers"],
+                  ["Work With Us", "/work-with-us"],
+                  ["Updates", "/updates"],
                   ["Contact", "/contact"],
                 ].map(([label, href]) => (
                   <li key={href}>

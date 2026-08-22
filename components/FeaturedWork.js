@@ -22,6 +22,10 @@ export default function FeaturedWork() {
               text="Recent *frames.*"
               className="display-line text-bone text-[clamp(2rem,5vw,3.75rem)]"
             />
+            <p className="mt-4 max-w-md text-bone/60">
+              A selection of films, campaigns and visual stories from Groove
+              Media.
+            </p>
           </div>
           <MagneticButton href="/advertising" variant="outline">
             View All Work

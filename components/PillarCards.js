@@ -7,19 +7,22 @@ import { RevealGroup, RevealItem } from "@/components/ui/Reveal";
 const PILLARS = [
   {
     title: "Advertising",
-    desc: "Films and campaigns for modern brands.",
+    desc: "Films, campaigns and visual content for brands that have something to say.",
+    cta: "Explore Advertising",
     href: "/advertising",
     img: "/assets/images/advertising.jpg",
   },
   {
     title: "Weddings",
-    desc: "Timeless wedding films and photography.",
+    desc: "Wedding films and photography made to be remembered.",
+    cta: "Explore Weddings",
     href: "/weddings",
     img: "/assets/images/wedding-hero.jpg",
   },
   {
     title: "Films",
-    desc: "Original documentaries, music videos and narrative productions.",
+    desc: "Documentaries, music videos and original productions.",
+    cta: "Explore Films",
     href: "/films",
     img: "/assets/images/films.jpg",
   },
@@ -31,7 +34,7 @@ export default function PillarCards() {
       <div className="container-x">
         <p className="eyebrow">What we do</p>
         <AnimatedHeading
-          text="Three things, done *properly*."
+          text="Three things. Done *properly*."
           className="display-line max-w-3xl text-bone text-[clamp(2rem,5vw,3.75rem)]"
         />
 
@@ -56,8 +59,8 @@ export default function PillarCards() {
                     {p.title}
                   </h3>
                   <p className="mt-2 max-w-xs text-bone/65">{p.desc}</p>
-                  <span className="mt-4 inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-gold opacity-0 transition-all duration-500 group-hover:opacity-100">
-                    Explore →
+                  <span className="mt-4 inline-flex translate-y-2 items-center gap-2 text-xs uppercase tracking-[0.2em] text-gold opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                    {p.cta} →
                   </span>
                 </div>
               </Link>
