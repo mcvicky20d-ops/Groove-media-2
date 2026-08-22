@@ -5,17 +5,19 @@ const fs = require("fs");
 const path = require("path");
 const sharp = require("sharp");
 
-const dir = path.join(__dirname, "..", "public", "assets", "images", "clients");
-// clean any leftover temp files
-fs.readdirSync(dir)
-  .filter((f) => f.endsWith(".tmp"))
-  .forEach((f) => fs.unlinkSync(path.join(dir, f)));
-
-const files = fs.readdirSync(dir).filter((f) => /\.webp$/i.test(f));
+const base = path.join(__dirname, "..", "public", "assets", "images");
+// process both the client wall and the advertising brand grid
+const dirs = [path.join(base, "clients"), path.join(base, "brands")];
+const files = dirs.flatMap((d) =>
+  fs
+    .readdirSync(d)
+    .filter((f) => /\.webp$/i.test(f))
+    .map((f) => path.join(d, f))
+);
 
 (async () => {
-  for (const f of files) {
-    const p = path.join(dir, f);
+  for (const p of files) {
+    const f = path.basename(p);
     const src = fs.readFileSync(p); // read into buffer -> no open file handle on p
 
     const trimmed = await sharp(src)

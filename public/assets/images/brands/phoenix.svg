@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240">
-  <circle cx="120" cy="120" r="112" fill="none" stroke="#C9A227" stroke-width="2" stroke-opacity="0.55"/>
-  <circle cx="120" cy="120" r="100" fill="none" stroke="#F5F5F5" stroke-width="1" stroke-opacity="0.12"/>
-  <circle cx="120" cy="20" r="4" fill="#C9A227"/>
-  <text x="120" y="120" text-anchor="middle" dominant-baseline="central"
-    font-family="Georgia, 'Times New Roman', serif" font-size="58" letter-spacing="1"
-    fill="#F5F5F5">PMC</text>
-</svg>

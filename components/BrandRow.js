@@ -12,7 +12,11 @@ import { AnimatePresence, motion } from "framer-motion";
  * brands: [{ name, logo, sector, blurb, video?, images: string[] }]
  * `logo` is a swappable placeholder — drop the real logo file at that path.
  */
-export default function BrandRow({ label = "Brands", brands = [] }) {
+export default function BrandRow({
+  label = "Brands",
+  brands = [],
+  cta = "View Project",
+}) {
   const [active, setActive] = useState(null);
 
   useEffect(() => {
@@ -40,20 +44,23 @@ export default function BrandRow({ label = "Brands", brands = [] }) {
             <button
               onClick={() => setActive(b)}
               data-cursor="grow"
-              aria-label={`See our work for ${b.name}`}
+              aria-label={`${cta} — ${b.name}`}
               title={b.name}
-              className="group relative flex aspect-square w-full items-center justify-center overflow-hidden rounded-lg border border-bone/10 bg-smoke/50 p-6 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
+              className="group relative flex aspect-[5/3] w-full items-center justify-center overflow-hidden rounded-lg bg-white p-5 transition-transform duration-500 ease-cinematic hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={b.logo}
                 alt={`${b.name} logo`}
-                className="relative z-10 max-h-24 w-auto max-w-full object-contain opacity-80 transition-opacity duration-300 group-hover:opacity-0"
+                className="relative z-10 max-h-[72%] w-auto max-w-[88%] object-contain transition-opacity duration-300 group-hover:opacity-0"
               />
-              {/* Gold overlay + name reveal on hover */}
-              <span className="absolute inset-0 z-20 flex items-center justify-center bg-gold px-4 text-center opacity-0 transition-opacity duration-300 ease-cinematic group-hover:opacity-100">
+              {/* Gold overlay: brand name + call-to-action on hover */}
+              <span className="absolute inset-0 z-20 flex flex-col items-center justify-center gap-1 bg-gold px-4 text-center opacity-0 transition-opacity duration-300 ease-cinematic group-hover:opacity-100">
                 <span className="font-display text-lg uppercase leading-tight tracking-wide text-ink md:text-xl">
                   {b.name}
+                </span>
+                <span className="text-[0.7rem] uppercase tracking-[0.25em] text-ink/70">
+                  {cta} →
                 </span>
               </span>
             </button>
@@ -92,12 +99,14 @@ export default function BrandRow({ label = "Brands", brands = [] }) {
               <div className="p-6 md:p-10">
                 <div className="flex items-center gap-4">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={active.logo}
-                    alt=""
-                    aria-hidden="true"
-                    className="h-14 w-14 shrink-0 object-contain"
-                  />
+                  <span className="flex h-16 w-24 shrink-0 items-center justify-center rounded-lg bg-white p-2">
+                    <img
+                      src={active.logo}
+                      alt=""
+                      aria-hidden="true"
+                      className="max-h-full max-w-full object-contain"
+                    />
+                  </span>
                   <div>
                     <p className="text-xs uppercase tracking-[0.3em] text-gold">
                       {active.sector}
