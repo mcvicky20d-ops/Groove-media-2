@@ -33,13 +33,13 @@ export default function LogoWall({ title = "Trusted by" }) {
         >
           {CLIENTS.map((c) => (
             <RevealItem key={c.name}>
-              <div className="group relative flex aspect-[3/2] items-center justify-center bg-white p-6 transition-colors duration-500 sm:p-8">
+              <div className="group relative flex aspect-[5/3] items-center justify-center bg-white p-2 transition-colors duration-500 sm:p-3">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={c.logo}
                   alt={`${c.name} logo`}
                   loading="lazy"
-                  className="max-h-[70%] max-w-[80%] object-contain transition-transform duration-500 ease-cinematic group-hover:scale-110"
+                  className="max-h-[88%] w-auto max-w-[94%] object-contain transition-transform duration-500 ease-cinematic group-hover:scale-[1.08]"
                 />
                 {/* Gold inset ring on hover */}
                 <span className="pointer-events-none absolute inset-0 rounded-none ring-0 ring-inset ring-gold transition-all duration-300 group-hover:ring-[6px]" />
@@ -49,7 +49,7 @@ export default function LogoWall({ title = "Trusted by" }) {
 
           {/* Accent tile completes the 8-cell grid and ties to the 50+ stat */}
           <RevealItem>
-            <div className="group flex aspect-[3/2] flex-col items-center justify-center bg-gold p-6 text-center">
+            <div className="group flex aspect-[5/3] flex-col items-center justify-center bg-gold p-6 text-center">
               <span className="font-display text-3xl uppercase leading-none text-ink transition-transform duration-500 ease-cinematic group-hover:scale-110 md:text-4xl">
                 50+
               </span>
