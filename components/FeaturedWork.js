@@ -5,10 +5,12 @@ import AnimatedHeading from "@/components/ui/AnimatedHeading";
 import { RevealGroup, RevealItem } from "@/components/ui/Reveal";
 import MagneticButton from "@/components/ui/MagneticButton";
 
+// Recent work — title cards (drop a real frame into `img` later to show it).
 const FEATURED = [
-  { title: "Night Rider", tag: "Automotive", img: "/assets/images/cat/auto-1.webp" },
-  { title: "Timeless Collection", tag: "Jewellery", img: "/assets/images/cat/photo-3.webp" },
-  { title: "The Suite", tag: "Hospitality", img: "/assets/images/cat/arch-3.jpg" },
+  { title: "Devoid", href: "/films" },
+  { title: "Iska", href: "/films" },
+  { title: "Refex", href: "/advertising" },
+  { title: "Hobbiton", href: "/films" },
 ];
 
 export default function FeaturedWork() {
@@ -32,30 +34,29 @@ export default function FeaturedWork() {
           </MagneticButton>
         </div>
 
-        <RevealGroup stagger={0.12} className="grid grid-cols-1 gap-5 md:grid-cols-3">
-          {FEATURED.map((item) => (
+        <RevealGroup
+          stagger={0.1}
+          className="grid grid-cols-2 gap-4 lg:grid-cols-4"
+        >
+          {FEATURED.map((item, i) => (
             <RevealItem key={item.title}>
               <Link
-                href="/advertising"
+                href={item.href}
                 data-cursor="grow"
-                className="group relative block aspect-[4/5] overflow-hidden rounded-2xl"
+                className="group relative flex aspect-[4/5] flex-col justify-between overflow-hidden rounded-2xl border border-bone/10 bg-gradient-to-b from-smoke to-ink p-6 transition-colors duration-500 hover:border-gold/40"
               >
-                <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-[1.1s] ease-cinematic group-hover:scale-110"
-                  style={{ backgroundImage: `url(${item.img})` }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/15 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 flex items-end justify-between p-6">
-                  <div>
-                    <span className="text-xs uppercase tracking-[0.3em] text-gold">
-                      {item.tag}
+                <span className="font-display text-sm text-gold">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <h3 className="font-display text-2xl uppercase text-bone transition-transform duration-500 ease-cinematic group-hover:-translate-y-1 md:text-3xl">
+                    {item.title}
+                  </h3>
+                  <span className="mt-3 inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-bone/45 transition-colors duration-300 group-hover:text-gold">
+                    View
+                    <span className="transition-transform duration-300 group-hover:translate-x-1">
+                      →
                     </span>
-                    <h3 className="mt-1 font-display text-2xl uppercase text-bone">
-                      {item.title}
-                    </h3>
-                  </div>
-                  <span className="flex h-10 w-10 shrink-0 translate-y-3 items-center justify-center rounded-full border border-bone/40 text-bone opacity-0 transition-all duration-500 ease-cinematic group-hover:translate-y-0 group-hover:border-gold group-hover:text-gold group-hover:opacity-100">
-                    ↗
                   </span>
                 </div>
               </Link>

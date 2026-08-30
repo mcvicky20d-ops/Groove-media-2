@@ -33,13 +33,13 @@ export default function LogoWall({ title = "Trusted by" }) {
         >
           {CLIENTS.map((c) => (
             <RevealItem key={c.name}>
-              <div className="group relative flex aspect-[5/3] items-center justify-center bg-white p-2 transition-colors duration-500 sm:p-3">
+              <div className="group relative flex aspect-[5/3] items-center justify-center overflow-hidden bg-white">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={c.logo}
                   alt={`${c.name} logo`}
                   loading="lazy"
-                  className="max-h-[88%] w-auto max-w-[94%] object-contain transition-transform duration-500 ease-cinematic group-hover:scale-[1.08]"
+                  className="h-full w-full object-contain transition-transform duration-500 ease-cinematic group-hover:scale-[1.05]"
                 />
                 {/* Gold inset ring on hover */}
                 <span className="pointer-events-none absolute inset-0 rounded-none ring-0 ring-inset ring-gold transition-all duration-300 group-hover:ring-[6px]" />
