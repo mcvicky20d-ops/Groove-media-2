@@ -1,6 +1,7 @@
 import PageHero from "@/components/PageHero";
 import SubNav from "@/components/SubNav";
 import SectionHeading from "@/components/SectionHeading";
+import PhotoCollage from "@/components/PhotoCollage";
 import BrandRow from "@/components/BrandRow";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
@@ -72,16 +73,10 @@ export default function AdvertisingPage() {
         id="photography"
         eyebrow="02 — Photography"
         title="Still images. Strong visual *identity*."
-        sub="Commercial photography created for brands, campaigns, products and people."
       />
       <div className="bg-ink pb-16 md:pb-24">
-        <div className="container-x mt-10">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/assets/images/photography-collage.webp"
-            alt="A collage of commercial photography by The Groove Media"
-            className="h-auto w-full rounded-2xl border border-bone/10"
-          />
+        <div className="mt-10">
+          <PhotoCollage />
         </div>
       </div>
 
