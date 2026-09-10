@@ -10,21 +10,21 @@ const PILLARS = [
     desc: "Films, campaigns and visual content for brands that have something to say.",
     cta: "Explore Advertising",
     href: "/advertising",
-    img: "/assets/images/advertising.jpg",
+    img: "/assets/images/pillar-advertising.jpg",
   },
   {
     title: "Weddings",
     desc: "Wedding films and photography made to be remembered.",
     cta: "Explore Weddings",
     href: "/weddings",
-    img: "/assets/images/wedding-hero.jpg",
+    img: "/assets/images/pillar-wedding.webp",
   },
   {
     title: "Films",
     desc: "Documentaries, music videos and original productions.",
     cta: "Explore Films",
     href: "/films",
-    img: "/assets/images/films.jpg",
+    img: "/assets/images/pillar-films.jpg",
   },
 ];
 
@@ -32,9 +32,8 @@ export default function PillarCards() {
   return (
     <section className="bg-ink py-20 md:py-28">
       <div className="container-x">
-        <p className="eyebrow">What we do</p>
         <AnimatedHeading
-          text="Three things. Done *properly*."
+          text="What we *do*"
           className="display-line max-w-3xl text-bone text-[clamp(2rem,5vw,3.75rem)]"
         />
 

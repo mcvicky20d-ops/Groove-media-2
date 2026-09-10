@@ -5,9 +5,9 @@ import { motion, useInView } from "framer-motion";
 import AnimatedHeading from "@/components/ui/AnimatedHeading";
 
 const STATS = [
-  { value: 500, suffix: "+", label: "Weddings" },
-  { value: 200, suffix: "+", label: "Advertising & Film Projects" },
-  { value: 50, suffix: "+", label: "Major Brands" },
+  { value: 1000, suffix: "+", label: "Weddings" },
+  { value: 300, suffix: "+", label: "Advertising Projects" },
+  { value: 100, suffix: "+", label: "Major Brands" },
 ];
 
 function Counter({ target, suffix = "", raw = false }) {

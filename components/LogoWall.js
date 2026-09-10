@@ -1,7 +1,5 @@
 "use client";
 
-import { RevealGroup, RevealItem } from "@/components/ui/Reveal";
-
 // Real client logos live in /public/assets/images/clients (drop-in swappable).
 const CLIENTS = [
   { name: "ITC Hotels", logo: "/assets/images/clients/itc-hotels.webp" },
@@ -13,12 +11,27 @@ const CLIENTS = [
   { name: "Crocs India", logo: "/assets/images/clients/crocs-india.webp" },
 ];
 
+function Logo({ name, logo }) {
+  return (
+    <div className="mx-3 flex h-24 w-44 shrink-0 items-center justify-center rounded-xl bg-white p-4 sm:h-28 sm:w-52">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={logo}
+        alt={`${name} logo`}
+        loading="lazy"
+        className="max-h-full max-w-full object-contain"
+      />
+    </div>
+  );
+}
+
 /**
- * Client logo wall. Logos ship on white backgrounds, so tiles are white and
- * edge-to-edge (hairline gridlines between them). On hover a tile lifts with a
- * gold inset ring while its logo scales up — an on-theme, restrained animation.
+ * Trusted By — an auto-scrolling logo carousel. The track holds two copies of
+ * the logos and loops seamlessly; it pauses on hover, and edge fades keep the
+ * ends soft. Logos ship on white, so each sits on a white chip to stay legible.
  */
 export default function LogoWall({ title = "Trusted by" }) {
+  const loop = [...CLIENTS, ...CLIENTS];
   return (
     <section className="bg-ink py-16 md:py-24">
       <div className="container-x">
@@ -26,39 +39,25 @@ export default function LogoWall({ title = "Trusted by" }) {
         <p className="max-w-md text-bone/60">
           Trusted by brands that care about the frame.
         </p>
+      </div>
 
-        <RevealGroup
-          stagger={0.06}
-          className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl bg-bone/10 lg:grid-cols-4"
-        >
-          {CLIENTS.map((c) => (
-            <RevealItem key={c.name}>
-              <div className="group relative flex aspect-[5/3] items-center justify-center overflow-hidden bg-white">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={c.logo}
-                  alt={`${c.name} logo`}
-                  loading="lazy"
-                  className="h-full w-full object-contain transition-transform duration-500 ease-cinematic group-hover:scale-[1.05]"
-                />
-                {/* Gold inset ring on hover */}
-                <span className="pointer-events-none absolute inset-0 rounded-none ring-0 ring-inset ring-gold transition-all duration-300 group-hover:ring-[6px]" />
-              </div>
-            </RevealItem>
+      {/* Full-bleed marquee with soft edge fades */}
+      <div className="marquee-mask relative mt-10 overflow-hidden">
+        <div
+          className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-ink to-transparent sm:w-28"
+          aria-hidden="true"
+        />
+        <div
+          className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-ink to-transparent sm:w-28"
+          aria-hidden="true"
+        />
+        <ul className="marquee-track py-2">
+          {loop.map((c, i) => (
+            <li key={`${c.name}-${i}`} aria-hidden={i >= CLIENTS.length}>
+              <Logo name={c.name} logo={c.logo} />
+            </li>
           ))}
-
-          {/* Accent tile completes the 8-cell grid and ties to the 50+ stat */}
-          <RevealItem>
-            <div className="group flex aspect-[5/3] flex-col items-center justify-center bg-gold p-6 text-center">
-              <span className="font-display text-3xl uppercase leading-none text-ink transition-transform duration-500 ease-cinematic group-hover:scale-110 md:text-4xl">
-                50+
-              </span>
-              <span className="mt-1 text-xs uppercase tracking-[0.25em] text-ink/70">
-                Brands
-              </span>
-            </div>
-          </RevealItem>
-        </RevealGroup>
+        </ul>
       </div>
     </section>
   );

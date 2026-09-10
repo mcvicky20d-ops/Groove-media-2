@@ -5,12 +5,12 @@ import AnimatedHeading from "@/components/ui/AnimatedHeading";
 import { RevealGroup, RevealItem } from "@/components/ui/Reveal";
 import MagneticButton from "@/components/ui/MagneticButton";
 
-// Recent work — title cards (drop a real frame into `img` later to show it).
+// Recent work — real frames.
 const FEATURED = [
-  { title: "Devoid", href: "/films" },
-  { title: "Iska", href: "/films" },
-  { title: "Refex", href: "/advertising" },
-  { title: "Hobbiton", href: "/films" },
+  { title: "Lasya", img: "/assets/images/work/lasya.jpg", href: "/advertising" },
+  { title: "Automotive", img: "/assets/images/work/automotive.jpg", href: "/advertising" },
+  { title: "Refex", img: "/assets/images/work/refex.jpg", href: "/advertising" },
+  { title: "Ambervilla", img: "/assets/images/work/ambervilla.jpg", href: "/advertising" },
 ];
 
 export default function FeaturedWork() {
@@ -19,7 +19,6 @@ export default function FeaturedWork() {
       <div className="container-x">
         <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
-            <p className="eyebrow">Selected work</p>
             <AnimatedHeading
               text="Recent *frames.*"
               className="display-line text-bone text-[clamp(2rem,5vw,3.75rem)]"
@@ -38,25 +37,24 @@ export default function FeaturedWork() {
           stagger={0.1}
           className="grid grid-cols-2 gap-4 lg:grid-cols-4"
         >
-          {FEATURED.map((item, i) => (
+          {FEATURED.map((item) => (
             <RevealItem key={item.title}>
               <Link
                 href={item.href}
                 data-cursor="grow"
-                className="group relative flex aspect-[4/5] flex-col justify-between overflow-hidden rounded-2xl border border-bone/10 bg-gradient-to-b from-smoke to-ink p-6 transition-colors duration-500 hover:border-gold/40"
+                className="group relative block aspect-[4/5] overflow-hidden rounded-2xl border border-bone/10"
               >
-                <span className="font-display text-sm text-gold">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <div>
-                  <h3 className="font-display text-2xl uppercase text-bone transition-transform duration-500 ease-cinematic group-hover:-translate-y-1 md:text-3xl">
+                <div
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-[1.1s] ease-cinematic group-hover:scale-110"
+                  style={{ backgroundImage: `url(${item.img})` }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 flex items-end justify-between p-5">
+                  <h3 className="font-display text-xl uppercase text-bone transition-transform duration-500 ease-cinematic group-hover:-translate-y-1 md:text-2xl">
                     {item.title}
                   </h3>
-                  <span className="mt-3 inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-bone/45 transition-colors duration-300 group-hover:text-gold">
-                    View
-                    <span className="transition-transform duration-300 group-hover:translate-x-1">
-                      →
-                    </span>
+                  <span className="flex h-9 w-9 shrink-0 translate-y-3 items-center justify-center rounded-full border border-bone/40 text-bone opacity-0 transition-all duration-500 ease-cinematic group-hover:translate-y-0 group-hover:border-gold group-hover:text-gold group-hover:opacity-100">
+                    ↗
                   </span>
                 </div>
               </Link>
