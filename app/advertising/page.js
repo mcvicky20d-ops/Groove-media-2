@@ -12,24 +12,11 @@ export const metadata = {
     "Advertising films, brand films, campaign content and commercial photography by The Groove Media — for brands and creative teams in Chennai.",
 };
 
-// Our Clients — every brand logo we have, on white chips.
-const CLIENT_LOGOS = [
-  "/assets/images/brands/sree-kumaran.webp",
-  "/assets/images/clients/itc-hotels.webp",
-  "/assets/images/brands/westin.webp",
-  "/assets/images/brands/refex.webp",
-  "/assets/images/brands/triune-tech.webp",
-  "/assets/images/brands/phoenix.webp",
-  "/assets/images/brands/wrangler.webp",
-  "/assets/images/brands/hilton.webp",
-  "/assets/images/brands/myntra.webp",
-  "/assets/images/brands/narayana-pearls.webp",
-  "/assets/images/brands/goa-titos.webp",
-  "/assets/images/brands/nac.webp",
-  "/assets/images/brands/pacifica.svg",
-  "/assets/images/brands/jairam.svg",
-  "/assets/images/clients/crocs-india.webp",
-];
+// Our Clients — the client logo set, on white chips.
+const CLIENT_LOGOS = Array.from(
+  { length: 31 },
+  (_, i) => `/assets/images/client-logos/logo-${String(i + 1).padStart(2, "0")}.webp`
+);
 
 // Behind-the-scenes — dummy stills for now; swap for real BTS photos later.
 const BTS_IMAGES = [

@@ -1,15 +1,10 @@
 "use client";
 
-// Real client logos live in /public/assets/images/clients (drop-in swappable).
-const CLIENTS = [
-  { name: "ITC Hotels", logo: "/assets/images/clients/itc-hotels.webp" },
-  { name: "Hilton", logo: "/assets/images/clients/hilton.webp" },
-  { name: "Phoenix Marketcity", logo: "/assets/images/clients/phoenix-marketcity.webp" },
-  { name: "Myntra", logo: "/assets/images/clients/myntra.webp" },
-  { name: "Wrangler India", logo: "/assets/images/clients/wrangler-india.webp" },
-  { name: "NAC Jewellers", logo: "/assets/images/clients/nac-jewellers.webp" },
-  { name: "Crocs India", logo: "/assets/images/clients/crocs-india.webp" },
-];
+// Client logos live in /public/assets/images/client-logos (drop-in swappable).
+const CLIENTS = Array.from({ length: 31 }, (_, i) => ({
+  name: `Client ${i + 1}`,
+  logo: `/assets/images/client-logos/logo-${String(i + 1).padStart(2, "0")}.webp`,
+}));
 
 function Logo({ name, logo }) {
   return (
