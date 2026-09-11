@@ -154,3 +154,7 @@ textarea:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   .marquee-track { animation: none; }
 }
+
+/* Hide scrollbar for the logo carousel while keeping scroll functional. */
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }

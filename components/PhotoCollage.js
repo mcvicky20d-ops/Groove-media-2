@@ -34,7 +34,7 @@ export default function PhotoCollage() {
           <Tile key={src} src={src} />
         ))}
         <div className="flex aspect-square items-center justify-center bg-white p-3 text-center">
-          <p className="max-w-[20ch] font-medium leading-snug text-ink lg:text-base">
+          <p className="max-w-[20ch] text-[0.7rem] font-normal uppercase leading-relaxed tracking-wide text-ink sm:text-xs">
             {CAPTION}
           </p>
         </div>
@@ -51,7 +51,9 @@ export default function PhotoCollage() {
           ))}
         </div>
         <div className="flex items-center justify-center bg-white px-6 py-10 text-center">
-          <p className="max-w-sm font-medium leading-snug text-ink">{CAPTION}</p>
+          <p className="max-w-sm text-sm font-normal uppercase leading-relaxed tracking-wide text-ink">
+            {CAPTION}
+          </p>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3">
           {IMAGES.slice(6).map((src) => (

@@ -1,8 +1,8 @@
 import PageHero from "@/components/PageHero";
-import SubNav from "@/components/SubNav";
 import SectionHeading from "@/components/SectionHeading";
 import PhotoCollage from "@/components/PhotoCollage";
-import BrandRow from "@/components/BrandRow";
+import LogoCarousel from "@/components/LogoCarousel";
+import Testimonials from "@/components/Testimonials";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
@@ -12,39 +12,55 @@ export const metadata = {
     "Advertising films, brand films, campaign content and commercial photography by The Groove Media — for brands and creative teams in Chennai.",
 };
 
-const TABS = [
-  { id: "brand-films", label: "Brand Films" },
-  { id: "photography", label: "Photography" },
-  { id: "content-production", label: "Content Production" },
-  { id: "campaigns", label: "Campaigns" },
-  { id: "case-studies", label: "Case Studies" },
+// Our Clients — every brand logo we have, on white chips.
+const CLIENT_LOGOS = [
+  "/assets/images/brands/sree-kumaran.webp",
+  "/assets/images/clients/itc-hotels.webp",
+  "/assets/images/brands/westin.webp",
+  "/assets/images/brands/refex.webp",
+  "/assets/images/brands/triune-tech.webp",
+  "/assets/images/brands/phoenix.webp",
+  "/assets/images/brands/wrangler.webp",
+  "/assets/images/brands/hilton.webp",
+  "/assets/images/brands/myntra.webp",
+  "/assets/images/brands/narayana-pearls.webp",
+  "/assets/images/brands/goa-titos.webp",
+  "/assets/images/brands/nac.webp",
+  "/assets/images/brands/pacifica.svg",
+  "/assets/images/brands/jairam.svg",
+  "/assets/images/clients/crocs-india.webp",
 ];
 
-const L = "/assets/images/brands";
-
-// Real client logos live in /assets/images/brands. Case film (`video`) and
-// stills (`images`) are still placeholders — swap them when supplied.
-const BRAND_FILMS = [
-  { name: "Sree Kumaran", logo: `${L}/sree-kumaran.webp`, sector: "Jewellery", blurb: "Brand and product films for the heritage jeweller — crafted to make gold feel timeless.", video: "/assets/videos/showreel.mp4", images: ["/assets/images/cat/jewel-1.webp", "/assets/images/cat/jewel-3.webp", "/assets/images/cat/jewel-7.webp"] },
-  { name: "The Westin", logo: `${L}/westin.webp`, sector: "Hospitality", blurb: "Property and experience films for the Westin — selling the feeling of a stay.", video: "/assets/videos/work/work-01.mp4", images: ["/assets/images/cat/arch-1.jpg", "/assets/images/cat/arch-2.jpg", "/assets/images/portfolio/work-03.jpg"] },
-  { name: "Refex", logo: `${L}/refex.webp`, sector: "Automotive / EV", blurb: "The EV fleet brand and campaign shoot for Refex Mobility — a clean-energy story on the move.", video: "/assets/videos/work/work-04.mp4", images: ["/assets/images/cat/auto-5.webp", "/assets/images/cat/auto-6.webp", "/assets/images/cat/auto-7.webp"] },
-  { name: "Triune Tech", logo: `${L}/triune-tech.webp`, sector: "Technology", blurb: "Corporate and product films for Triune — clarity and confidence for a technical story.", images: ["/assets/images/cat/auto-1.webp", "/assets/images/portfolio/work-06.jpg"] },
+// Behind-the-scenes — dummy stills for now; swap for real BTS photos later.
+const BTS_IMAGES = [
+  "/assets/images/cat/auto-1.webp",
+  "/assets/images/cat/photo-1.webp",
+  "/assets/images/cat/jewel-7.webp",
+  "/assets/images/cat/photo-3.webp",
+  "/assets/images/cat/wed-couple-1.webp",
+  "/assets/images/cat/photo-2.webp",
 ];
 
-const CONTENT_BRANDS = [
-  { name: "Phoenix Marketcity", logo: `${L}/phoenix.webp`, sector: "Retail", blurb: "Always-on seasonal content that keeps the mall's calendar alive.", images: ["/assets/images/cat/arch-2.jpg", "/assets/images/cat/photo-1.webp"] },
-  { name: "Pacifica", logo: `${L}/pacifica.svg`, sector: "Real Estate", blurb: "Walkthroughs and lifestyle content for premium homes.", images: ["/assets/images/realestate-1.jpg", "/assets/images/cat/arch-5.jpg"] },
-  { name: "Wrangler", logo: `${L}/wrangler.webp`, sector: "Fashion / Denim", blurb: "Editorial fashion content and campaign stills.", images: ["/assets/images/cat/photo-1.webp", "/assets/images/cat/photo-2.webp"] },
-  { name: "Jairam", logo: `${L}/jairam.svg`, sector: "Jewellery", blurb: "Social-first jewellery content, shot for scroll-stopping detail.", images: ["/assets/images/cat/jewel-4.webp", "/assets/images/cat/jewel-2.webp"] },
-  { name: "Hilton", logo: `${L}/hilton.webp`, sector: "Hospitality", blurb: "Brand and interiors content for the property.", images: ["/assets/images/hotel-1.jpg", "/assets/images/hotel-2.jpg", "/assets/images/cat/arch-3.jpg"] },
+// Client testimonials — placeholder copy; replace with real, approved quotes.
+const TESTIMONIALS = [
+  { quote: "They understood the brand in one conversation and turned it into a film that genuinely moved our audience. Effortless from brief to delivery.", name: "Marketing Lead", org: "Hospitality Brand" },
+  { quote: "The craft is on another level — every frame felt intentional. Our campaign performed beyond what we projected.", name: "Brand Manager", org: "Retail / Fashion" },
+  { quote: "End-to-end, on time, and zero drama. The Groove Media is the team we call first for anything on camera.", name: "Creative Producer", org: "Agency Partner" },
+  { quote: "From concept to final cut, they made a complex shoot feel simple. The films still get compliments months later.", name: "Head of Marketing", org: "Jewellery Brand" },
+  { quote: "A rare mix of creativity and reliability. They pitched a sharper idea than our brief — and then delivered it flawlessly.", name: "Founder", org: "Real Estate" },
+  { quote: "Our social content finally looks like the brand we want to be. Consistent, premium, and always on schedule.", name: "Digital Lead", org: "Automotive" },
 ];
 
-const CAMPAIGN_BRANDS = [
-  { name: "Myntra", logo: `${L}/myntra.webp`, sector: "Fashion / E-commerce", blurb: "Social-first campaign content, cut for every platform and format.", video: "/assets/videos/work/work-04.mp4", images: ["/assets/images/cat/photo-2.webp", "/assets/images/cat/jewel-4.webp"] },
-  { name: "Narayana Pearls", logo: `${L}/narayana-pearls.webp`, sector: "Jewellery", blurb: "A pearl-and-gold campaign, shot fine-art.", images: ["/assets/images/cat/jewel-1.webp", "/assets/images/cat/jewel-3.webp"] },
-  { name: "Goa Tourism — Casino / TITO's", logo: `${L}/goa-titos.webp`, sector: "Nightlife / Casino", blurb: "A high-energy campaign for Goa's nightlife and casino scene.", images: ["/assets/images/cat/auto-2.webp", "/assets/images/cat/auto-3.webp"] },
-  { name: "NAC", logo: `${L}/nac.webp`, sector: "Luxury Jewellery", blurb: "Product film and commercial stills for the flagship jeweller.", images: ["/assets/images/cat/jewel-5.jpg", "/assets/images/cat/jewel-6.jpg", "/assets/images/portfolio/work-07.jpg"] },
-];
+// A simple play button for the (empty) film slots.
+function PlayButton() {
+  return (
+    <span className="flex h-16 w-16 items-center justify-center rounded-full border border-bone/30 bg-ink/40 text-bone transition-all duration-500 ease-cinematic group-hover:scale-110 group-hover:border-gold group-hover:text-gold">
+      <svg viewBox="0 0 24 24" fill="currentColor" className="ml-1 h-6 w-6">
+        <path d="M8 5v14l11-7z" />
+      </svg>
+    </span>
+  );
+}
 
 export default function AdvertisingPage() {
   return (
@@ -53,26 +69,33 @@ export default function AdvertisingPage() {
         eyebrow="Advertising"
         title="Films that make brands worth *watching*."
         subtitle="We create advertising films, brand films, campaign content and commercial photography for brands and creative teams — from the first idea to the final frame."
-        image="/assets/images/advertising.jpg"
+        image="/assets/images/advertising-banner.webp"
       />
-      <SubNav items={TABS} />
 
-      {/* 01 — Brand Films */}
+      {/* Advertising Films — four film slots (9:16) */}
       <SectionHeading
-        id="brand-films"
-        eyebrow="01 — Brand Films"
-        title="Give your brand a story people can *remember*."
-        sub="Selected brand films by Groove Media."
+        title="Advertising *Films*"
+        sub="Brand and ad films made to be watched, shared and remembered."
       />
       <div className="bg-ink pb-16 md:pb-24">
-        <BrandRow brands={BRAND_FILMS} cta="View Project" />
+        <div className="container-x mt-10">
+          <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+            {[0, 1, 2, 3].map((i) => (
+              <div
+                key={i}
+                className="group relative flex aspect-[9/16] items-center justify-center overflow-hidden rounded-2xl border border-bone/10 bg-gradient-to-b from-smoke to-ink"
+              >
+                <PlayButton />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
-      {/* 02 — Photography */}
+      {/* Collage */}
       <SectionHeading
-        id="photography"
-        eyebrow="02 — Photography"
-        title="Still images. Strong visual *identity*."
+        title="Collage"
+        sub="A frame-by-frame look at our commercial photography."
       />
       <div className="bg-ink pb-16 md:pb-24">
         <div className="mt-10">
@@ -80,54 +103,47 @@ export default function AdvertisingPage() {
         </div>
       </div>
 
-      {/* 03 — Content Production */}
+      {/* Behind the Scenes — 2×3 image grid */}
       <SectionHeading
-        id="content-production"
-        eyebrow="03 — Content Production"
-        title="One brand. Many *stories*."
-        sub="Visual content created to work across campaigns, digital platforms and social media while maintaining a consistent brand language."
+        title="Behind the *Scenes*"
+        sub="Our crew, our cameras and the making-of, on every set."
       />
       <div className="bg-ink pb-16 md:pb-24">
-        <BrandRow brands={CONTENT_BRANDS} cta="View Project" />
-      </div>
-
-      {/* 04 — Campaigns */}
-      <SectionHeading
-        id="campaigns"
-        eyebrow="04 — Campaigns"
-        title="One idea. Many *frames*."
-        sub="Campaign films and visual content created to work together across platforms."
-      />
-      <div className="bg-ink pb-16 md:pb-24">
-        <BrandRow brands={CAMPAIGN_BRANDS} cta="View Campaign" />
-      </div>
-
-      {/* Case Studies */}
-      <SectionHeading
-        id="case-studies"
-        eyebrow="Case Studies"
-        title="The work behind the *work*."
-        sub="A deeper look at selected projects, the thinking behind them and how they came together."
-      />
-      <div className="bg-ink pb-20 md:pb-28">
         <div className="container-x mt-10">
-          <ul className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-            {[0, 1, 2, 3].map((i) => (
-              <li
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
+            {BTS_IMAGES.map((src, i) => (
+              <div
                 key={i}
-                className="flex aspect-[5/3] items-center justify-center rounded-lg border border-dashed border-bone/15 bg-smoke/30"
+                className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-bone/10"
               >
-                <span className="text-xs uppercase tracking-[0.25em] text-bone/35">
-                  Brand Logo
-                </span>
-              </li>
+                <div
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-cinematic group-hover:scale-105"
+                  style={{ backgroundImage: `url(${src})` }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink/50 to-transparent" />
+              </div>
             ))}
-          </ul>
-          <p className="mt-8 text-center text-sm italic text-bone/40">
-            Detailed case studies coming soon.
-          </p>
+          </div>
         </div>
       </div>
+
+      {/* Our Clients — auto-scrolling logo carousel */}
+      <SectionHeading
+        title="Our *Clients*"
+        sub="Brands that trust us with their story."
+      />
+      <div className="bg-ink pb-16 md:pb-24">
+        <div className="mt-10">
+          <LogoCarousel logos={CLIENT_LOGOS} />
+        </div>
+      </div>
+
+      {/* Client Testimonials */}
+      <Testimonials
+        eyebrow="Client Testimonials"
+        title="What our *clients* say."
+        quotes={TESTIMONIALS}
+      />
 
       <CTASection
         title="Have a campaign in *mind?*"

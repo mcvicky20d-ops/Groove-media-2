@@ -7,7 +7,7 @@ import { RevealGroup, RevealItem } from "@/components/ui/Reveal";
  * Client testimonials. Copy is placeholder/sample — replace with real quotes
  * and have permission before publishing brand names.
  */
-const QUOTES = [
+const DEFAULT_QUOTES = [
   {
     quote:
       "They understood the brand in one conversation and turned it into a film that genuinely moved our audience. Effortless from brief to delivery.",
@@ -28,23 +28,27 @@ const QUOTES = [
   },
 ];
 
-export default function Testimonials() {
+export default function Testimonials({
+  eyebrow = "What clients say",
+  title = "Trusted to tell the *story*.",
+  quotes = DEFAULT_QUOTES,
+}) {
   return (
     <section className="relative bg-ink py-20 md:py-28">
       <div className="container-x">
-        <p className="eyebrow">What clients say</p>
+        <p className="eyebrow">{eyebrow}</p>
         <AnimatedHeading
-          text="Trusted to tell the *story*."
+          text={title}
           className="display-line max-w-3xl text-bone text-[clamp(2rem,5vw,3.75rem)]"
         />
 
         <RevealGroup
           stagger={0.12}
-          className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3"
+          className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
         >
-          {QUOTES.map((t) => (
+          {quotes.map((t, i) => (
             <RevealItem
-              key={t.org}
+              key={i}
               className="group flex h-full flex-col justify-between rounded-2xl border border-bone/10 bg-smoke/60 p-8 transition-all duration-500 hover:-translate-y-1.5 hover:border-gold/40"
             >
               <div>
