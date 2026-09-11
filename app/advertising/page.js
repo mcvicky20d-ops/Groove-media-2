@@ -78,8 +78,8 @@ export default function AdvertisingPage() {
         sub="Brand and ad films made to be watched, shared and remembered."
       />
       <div className="bg-ink pb-16 md:pb-24">
-        <div className="container-x mt-10">
-          <div className="mx-auto grid max-w-4xl grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4">
+        <div className="container-x mt-14 md:mt-20">
+          <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
             {[0, 1, 2, 3].map((i) => (
               <div
                 key={i}
