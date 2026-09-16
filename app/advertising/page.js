@@ -129,11 +129,11 @@ export default function AdvertisingPage() {
 
       {/* Client Testimonials — center-focus carousel */}
       <section className="bg-ink py-20 md:py-28">
-        <div className="container-x">
-          <p className="eyebrow">Client Testimonials</p>
+        <div className="container-x text-center">
+          <p className="eyebrow justify-center">Client Testimonials</p>
           <AnimatedHeading
             text="What our *clients* say."
-            className="display-line max-w-3xl text-bone text-[clamp(2rem,5vw,3.75rem)]"
+            className="display-line mx-auto max-w-3xl text-bone text-[clamp(2rem,5vw,3.75rem)]"
           />
         </div>
         <div className="mt-10">
