@@ -19,14 +19,18 @@ fs.rmSync(outDir, { recursive: true, force: true });
 fs.mkdirSync(outDir, { recursive: true });
 
 const CW = 1000;
-const CH = 600; // 5:3 canvas (matches the chip)
-const TARGET_H = Math.round(CH * 0.62);
-const MAX_W = Math.round(CW * 0.9);
+const CH = 600; //     5:3 canvas (matches the chip)
+const BOX_W = Math.round(CW * 0.8); // every logo fits inside this box (contain)
+const BOX_H = Math.round(CH * 0.6); // → uniform visual size across the set
+
+// files to drop from the set (removed by the client)
+const EXCLUDE = new Set(["6.webp", "24.webp"]);
 
 // numeric sort of the messy filenames (e.g. "12 .webp", "3.webp", "29.png")
 const files = fs
   .readdirSync(src)
   .filter((f) => /\.(webp|png|jpe?g)$/i.test(f))
+  .filter((f) => !EXCLUDE.has(f.trim()))
   .sort((a, b) => (parseInt(a, 10) || 0) - (parseInt(b, 10) || 0));
 
 (async () => {
@@ -38,14 +42,10 @@ const files = fs
       .trim({ background: "#ffffff", threshold: 18 })
       .toBuffer({ resolveWithObject: true });
 
-    let scale = TARGET_H / t.info.height;
-    let w = Math.round(t.info.width * scale);
-    let h = TARGET_H;
-    if (w > MAX_W) {
-      scale = MAX_W / t.info.width;
-      w = MAX_W;
-      h = Math.round(t.info.height * scale);
-    }
+    // contain-fit into a shared box so all logos read at a consistent size
+    const scale = Math.min(BOX_W / t.info.width, BOX_H / t.info.height);
+    const w = Math.max(1, Math.round(t.info.width * scale));
+    const h = Math.max(1, Math.round(t.info.height * scale));
     const mark = await sharp(t.data).resize(w, h).toBuffer();
     const out = await sharp({
       create: { width: CW, height: CH, channels: 4, background: "#ffffff" },

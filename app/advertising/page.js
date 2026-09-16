@@ -2,7 +2,8 @@ import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import PhotoCollage from "@/components/PhotoCollage";
 import LogoCarousel from "@/components/LogoCarousel";
-import Testimonials from "@/components/Testimonials";
+import TestimonialCarousel from "@/components/TestimonialCarousel";
+import AnimatedHeading from "@/components/ui/AnimatedHeading";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
@@ -14,7 +15,7 @@ export const metadata = {
 
 // Our Clients — the client logo set, on white chips.
 const CLIENT_LOGOS = Array.from(
-  { length: 31 },
+  { length: 29 },
   (_, i) => `/assets/images/client-logos/logo-${String(i + 1).padStart(2, "0")}.webp`
 );
 
@@ -36,6 +37,7 @@ const TESTIMONIALS = [
   { quote: "From concept to final cut, they made a complex shoot feel simple. The films still get compliments months later.", name: "Head of Marketing", org: "Jewellery Brand" },
   { quote: "A rare mix of creativity and reliability. They pitched a sharper idea than our brief — and then delivered it flawlessly.", name: "Founder", org: "Real Estate" },
   { quote: "Our social content finally looks like the brand we want to be. Consistent, premium, and always on schedule.", name: "Digital Lead", org: "Automotive" },
+  { quote: "Professional, creative and genuinely easy to work with. They treated our brand like it was their own.", name: "Managing Director", org: "Hospitality Group" },
 ];
 
 // A simple play button for the (empty) film slots.
@@ -125,12 +127,19 @@ export default function AdvertisingPage() {
         </div>
       </div>
 
-      {/* Client Testimonials */}
-      <Testimonials
-        eyebrow="Client Testimonials"
-        title="What our *clients* say."
-        quotes={TESTIMONIALS}
-      />
+      {/* Client Testimonials — center-focus carousel */}
+      <section className="bg-ink py-20 md:py-28">
+        <div className="container-x">
+          <p className="eyebrow">Client Testimonials</p>
+          <AnimatedHeading
+            text="What our *clients* say."
+            className="display-line max-w-3xl text-bone text-[clamp(2rem,5vw,3.75rem)]"
+          />
+        </div>
+        <div className="mt-10">
+          <TestimonialCarousel quotes={TESTIMONIALS} />
+        </div>
+      </section>
 
       <CTASection
         title="Have a campaign in *mind?*"

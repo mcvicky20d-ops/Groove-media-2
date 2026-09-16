@@ -1,7 +1,7 @@
 "use client";
 
 // Client logos live in /public/assets/images/client-logos (drop-in swappable).
-const CLIENTS = Array.from({ length: 31 }, (_, i) => ({
+const CLIENTS = Array.from({ length: 29 }, (_, i) => ({
   name: `Client ${i + 1}`,
   logo: `/assets/images/client-logos/logo-${String(i + 1).padStart(2, "0")}.webp`,
 }));
