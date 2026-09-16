@@ -20,8 +20,8 @@ fs.mkdirSync(outDir, { recursive: true });
 
 const CW = 1000;
 const CH = 600; //     5:3 canvas (matches the chip)
-const BOX_W = Math.round(CW * 0.8); // every logo fits inside this box (contain)
-const BOX_H = Math.round(CH * 0.6); // → uniform visual size across the set
+const BOX_W = Math.round(CW * 0.92); // every logo fits inside this box (contain)
+const BOX_H = Math.round(CH * 0.82); // → uniform, prominent size across the set
 
 // files to drop from the set (removed by the client)
 const EXCLUDE = new Set(["6.webp", "24.webp"]);

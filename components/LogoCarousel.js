@@ -88,7 +88,7 @@ export default function LogoCarousel({ logos = [] }) {
           <li
             key={i}
             aria-hidden={i >= logos.length}
-            className="flex h-24 w-40 shrink-0 items-center justify-center rounded-xl bg-white p-4 sm:h-28 sm:w-48"
+            className="flex h-28 w-48 shrink-0 items-center justify-center rounded-xl bg-white p-3 sm:h-32 sm:w-56"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
